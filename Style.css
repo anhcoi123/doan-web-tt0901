@@ -1,0 +1,23 @@
+﻿body {
+}
+#list
+{
+    list-style:none;
+}
+.ImgSP
+{
+    width:200px;
+    height:200px;
+    border-radius:20px;
+    margin:100px 0px 0px 80px;
+    float:left;
+    }
+.detail
+{
+    color:White;
+    width:160px;
+    height:30px;
+    font-size:large;
+    }
+
+
