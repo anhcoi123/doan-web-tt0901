@@ -10,7 +10,7 @@
     <asp:ContentPlaceHolder id="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-
+<link href="style.css" rel="Stylesheet" type="text/css" />
 <script type="text/javascript" src="js/swfobject/swfobject.js"></script>
         
 <script type="text/javascript">
