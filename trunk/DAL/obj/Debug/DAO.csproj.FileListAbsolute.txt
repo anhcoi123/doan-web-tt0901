@@ -1,5 +1,0 @@
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAL\bin\Debug\DAL.dll
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAL\bin\Debug\DAL.pdb
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAL\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAL\obj\Debug\DAL.dll
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAL\obj\Debug\DAL.pdb
