@@ -1,9 +1,0 @@
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\BLL.dll
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\BLL.pdb
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\obj\Debug\BLL.dll
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\obj\Debug\BLL.pdb
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\DAL.dll
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\DAO.dll
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\DAL.pdb
-C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\DAO.pdb
