@@ -11,7 +11,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        load.DataSource = BLL_LinhKien.GetAll(); 
+        load.DataSource = BLL_LinhKien.Get10(); 
         load.DataBind();
     }
 }
