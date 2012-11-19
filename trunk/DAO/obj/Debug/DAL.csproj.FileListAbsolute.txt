@@ -1,0 +1,14 @@
+C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\bin\Debug\DAO.dll
+C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\bin\Debug\DAO.pdb
+C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\obj\Debug\DAO.dll
+C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\obj\Debug\DAO.pdb
+C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\bin\Debug\DAL.dll
+C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\bin\Debug\DAL.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAO.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAO.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAL.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAL.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\obj\Debug\ResolveAssemblyReference.cache
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\obj\Debug\DAO.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\obj\Debug\DAO.pdb
