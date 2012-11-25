@@ -51,6 +51,7 @@
     // Script Giỏ hàng
     function updateGH() {
         $("#column_right").load("columnRight.aspx");
+        ScrollCart();
     }
 
     function themVaoGH(a) {
