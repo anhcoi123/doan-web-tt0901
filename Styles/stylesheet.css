@@ -578,3 +578,23 @@ p {
 	width: 158px;
 	min-height: 0px;
 }
+
+#commentWrapper { /* required to avoid jumping */
+  /*left: 450px;*/
+  position: absolute;
+  /*margin-left: 35px;*/
+  /*width:280px;*/
+  overflow:visible;
+}
+
+#comment
+{
+	width:100%;
+}
+
+#comment.fixed 
+{
+  position: fixed;
+  top:10px;
+  width:180px;
+}
