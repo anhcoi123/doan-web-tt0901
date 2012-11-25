@@ -13,9 +13,13 @@ namespace BLL
        {
             return DAL.LinhKien.GetallProducts();
        }
-       public static DataTable Get10()
+       public static DataTable Get8()
        {
-           return DAL.LinhKien.Get10Products();
+           return DAL.LinhKien.Get8Products();
+       }
+       public static DAO.LinhKien searchLK(string id)
+       {
+           return DAL.LinhKien.searchLK(id);
        }
     }
 }

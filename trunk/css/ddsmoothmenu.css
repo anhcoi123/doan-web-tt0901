@@ -135,7 +135,7 @@ height: 0;
 }
 
 .toplevelshadow{ /*shadow opacity. Doesn't work in IE*/
-opacity: 0.5;
+/*opacity: 0.5;*/
 }
 
 /* menu */
