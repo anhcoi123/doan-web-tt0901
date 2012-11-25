@@ -9,8 +9,10 @@ body {
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 12px;
 	line-height: 1.4em; 
-	background-color: #d6d6ce;
+	/*background-color: #d6d6ce;*/
+	background: url(../images/templatemo_header_bg.jpg) repeat-x
 }
+
 
 a, a:link, a:visited { 
 	color: #5b5b08; 
@@ -629,4 +631,45 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 .pagging ul li a:hover { 
 	background: #5b5b08; 
 	color: #fff;  
+}
+
+.mainContent 
+{
+	/*margin: 0 5%;*/
+	width:80%;
+	overflow:visible;
+	float:left;
+	color: White;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	line-height: 1.4em; 
+	/*background-color: #d6d6ce;*/
+	
+}
+#leftmainContent 
+{
+	width:10%;
+	float:left;
+	color: White;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	line-height: 1.4em;
+	/*background-color: #d6d6ce;*/
+	
+}
+#rightmainContent 
+{
+	width:10%;
+	float:left;
+	color: White;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	line-height: 1.4em; 
+	z-index:99;
+	/*background-color: #d6d6ce;*/
+	
+}
+#wrapper
+{
+	background: url(../images/templatemo_header_bg.jpg) repeat
 }

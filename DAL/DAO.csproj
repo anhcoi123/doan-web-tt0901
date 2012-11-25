@@ -44,6 +44,7 @@
     <Compile Include="CTPNhap.cs" />
     <Compile Include="CTPXuat.cs" />
     <Compile Include="DonDH.cs" />
+    <Compile Include="GioHang.cs" />
     <Compile Include="KhachHang.cs" />
     <Compile Include="LinhKien.cs" />
     <Compile Include="LoaiLK.cs" />
