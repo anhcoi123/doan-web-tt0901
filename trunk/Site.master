@@ -58,7 +58,7 @@
         var request = $.ajax({
             url: "giohang.aspx",
             type: "POST",
-            data: { MALK: a , SoLuong:'1'},
+            data: { MALK: a , SoLuong:'1',method:'add'},
             success: function (response, textStatus, jqXHR) {
                 // log a message to the console
                 var image = $('#img' + a).offset();

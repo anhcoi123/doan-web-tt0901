@@ -1,20 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="giohang.aspx.cs" Inherits="giohang" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <% if (Request["MALK"] == null && Request["Update"] == null)
+    <% if (Request["MALK"] == null)
        {%>
         Anh Khoa SHOP - Giỏ hàng
         <%} %>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="headerMess" Runat="Server">
-    <% if (Request["MALK"] == null && Request["Update"] == null)
+    <% if (Request["MALK"] == null )
        { %>
         Giỏ hàng
     <%} %>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
 <div id="Giohang">
-    <% if (Request["MALK"] == null && Request["Update"] == null)
+    <% if (Request["MALK"] == null )
        {%>
        <script language="javascript" type="text/javascript">
            function capNhat(a) {
@@ -22,7 +22,7 @@
                var request = $.ajax({
                    url: "giohang.aspx",
                    type: "POST",
-                   data: { MALK: a, SoLuong: c, Update: 'true' },
+                   data: { MALK: a, SoLuong: c, method: 'update' },
                    success: function (response, textStatus, jqXHR) {
                        var result = "";
                        result = response.toString();

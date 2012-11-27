@@ -4,7 +4,7 @@
         var request = $.ajax({
             url: "giohang.aspx",
             type: "POST",
-            data: { MALK: malk, SoLuong: '0',Delete: 'true' },
+            data: { MALK: malk, SoLuong: '0',method: 'delete' },
             success: function (response, textStatus, jqXHR) {
                 $("#column_right").load("columnRight.aspx");
             }
@@ -65,7 +65,8 @@
                                     <td><%=lk.TenLK%></td>
                                 </tr>
                            <%}
-                        }%>
+                        }else{%>Giỏ hàng rỗng
+                    <%}%>
                 </table>
             </div>
       <div class="bottom">&nbsp;</div>
