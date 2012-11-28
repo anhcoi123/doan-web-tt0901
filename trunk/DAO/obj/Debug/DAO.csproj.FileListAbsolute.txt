@@ -8,3 +8,8 @@ D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\bin\Debug\DAL.pdb
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\obj\Debug\ResolveAssemblyReference.cache
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\obj\Debug\DAL.dll
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\obj\Debug\DAL.pdb
+D:\Document\ASP\DAO\bin\Debug\DAL.dll
+D:\Document\ASP\DAO\bin\Debug\DAL.pdb
+D:\Document\ASP\DAO\obj\Debug\ResolveAssemblyReference.cache
+D:\Document\ASP\DAO\obj\Debug\DAL.dll
+D:\Document\ASP\DAO\obj\Debug\DAL.pdb
