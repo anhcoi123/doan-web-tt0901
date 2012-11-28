@@ -8,7 +8,7 @@ using DAO;
 
 namespace DAL
 {
-    class DALClass
+    public static class DALClass
     {
         private static string sqlConnectionString = @"Data Source=.\SQLEXPRESS;Database=QLBANHANG;Trusted_Connection=True;";
         private static SqlConnection sqlConnection = new SqlConnection(sqlConnectionString);

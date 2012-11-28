@@ -41,17 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_DONDH.cs" />
     <Compile Include="BLL_LinhKien.cs" />
+    <Compile Include="BLL_NHASX.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAO.csproj">
-      <Project>{CDA66DEA-2DBB-42C8-9792-62EC690472D7}</Project>
-      <Name>DAO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAO\DAL.csproj">
+    <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{5E88E74D-041C-45B0-814C-B4D0E4FEF099}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{CDA66DEA-2DBB-42C8-9792-62EC690472D7}</Project>
+      <Name>DAO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

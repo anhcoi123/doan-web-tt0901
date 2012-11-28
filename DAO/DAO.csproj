@@ -49,6 +49,7 @@
     <Compile Include="LinhKien.cs" />
     <Compile Include="LoaiLK.cs" />
     <Compile Include="NhaCC.cs" />
+    <Compile Include="NhaSX.cs" />
     <Compile Include="PhieuNhap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PXuat.cs" />

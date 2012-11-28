@@ -16,3 +16,4 @@ D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\DAO.pdb
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\ResolveAssemblyReference.cache
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\BLL.dll
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\BLL.pdb
+D:\Document\ASP\BLL\obj\Debug\ResolveAssemblyReference.cache

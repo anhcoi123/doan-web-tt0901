@@ -41,11 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALClass.cs" />
+    <Compile Include="DAL_DONDH.cs" />
     <Compile Include="DAL_LinhKien.cs" />
+    <Compile Include="DAL_NHASX.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAO.csproj">
+    <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{CDA66DEA-2DBB-42C8-9792-62EC690472D7}</Project>
       <Name>DAO</Name>
     </ProjectReference>

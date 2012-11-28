@@ -61,5 +61,21 @@ namespace DAO
             get { return _hinhAnh; }
             set { _hinhAnh = value; }
         }
+
+        private string _maloailk;
+
+        public string Maloailk
+        {
+            get { return _maloailk; }
+            set { _maloailk = value; }
+        }
+
+        private string _mansx;
+
+        public string Mansx
+        {
+            get { return _mansx; }
+            set { _mansx = value; }
+        }
     }
 }
