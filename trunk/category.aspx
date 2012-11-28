@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="category.aspx.cs" Inherits="category" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+<%=title %>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -41,8 +42,7 @@
             </td>
           </tr>
         </table>
-        <div class="pagination"><?php echo $pagination; ?></div>
-        <?php } ?>
+        <div class="pagination"></div>
         </ItemTemplate>
     </asp:DataList>
     <asp:Label ID="txtNoData" runat="server"></asp:Label>

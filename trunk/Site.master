@@ -25,80 +25,14 @@
 </script>
 
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+<link href="Scripts/thickbox/thickbox.css" type="text/css" rel="stylesheet"/>
+<script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="Scripts/thickbox/thickbox-compressed.js" type="text/javascript"></script>
+<script src="Scripts/giohang.js" type="text/javascript"></script>
 
-    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/ddsmoothmenu.js">
-
-    /***********************************************
-    * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
-    * This notice MUST stay intact for legal use
-    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-    ***********************************************/
-
-</script>
-
-<script type="text/javascript">
-
-    ddsmoothmenu.init({
-        mainmenuid: "templatemo_menu", //menu DIV id
-        orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-        classname: 'ddsmoothmenu', //class added to menu's outer DIV
-        //customtheme: ["#1c5a80", "#18374a"],
-        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
-    })
-
-
-    // Script Giỏ hàng
-    function updateGH() {
-        $("#column_right").load("columnRight.aspx");
-        ScrollCart();
-    }
-
-    function themVaoGH(a) {
-        var request = $.ajax({
-            url: "giohang.aspx",
-            type: "POST",
-            data: { MALK: a , SoLuong:'1',method:'add'},
-            success: function (response, textStatus, jqXHR) {
-                // log a message to the console
-                var image = $('#img' + a).offset();
-                var cart = $('#module_cart').offset();
-                $("#temp").stop(true, true);
-                $("#temp").remove();
-                $('#img' + a).before('<img src="' + $('#img' + a).attr('src') + '" id="temp" style="z-index:100; position: absolute; top: ' + image.top + 'px; left: ' + image.left + 'px;" />');
-
-                params = {
-                    top: cart.top + 'px',
-                    left: cart.left + 'px',
-                    opacity: 0.0,
-                    width: $('#module_cart').width(),
-                    heigth: $('#module_cart').height()
-                };
-
-                $('#temp').animate(params, 1500, false, function () {
-                    $('#temp').remove();
-                    updateGH();
-                });
-                /*$(".ErrorMes").stop().css("opacity", "1");
-                $(".ErrorMes").html(response).fadeOut(3000, function () { $(this).html(""); $(this).toggle(); updateGH(); });*/
-
-            },
-            // callback handler that will be called on error
-            error: function (jqXHR, textStatus, errorThrown) {
-                // log the error to the console
-                $(".ErrorMes").html(errorThrown);
-            },
-            // callback handler that will be called on completion
-            // which means, either on success or error
-            complete: function () {
-                // enable the inputs
-            }
-        });
-    }
-
-
-</script> 
 <script language="javascript" type="text/javascript">
+
+    
     /*
     var i = 0;
     setTimeout(chay, 1000);
@@ -183,9 +117,9 @@ function () {
                     <ItemTemplate>
                         <table style="vertical-align:bottom; text-align:center;">
                             <tr style="width:25%"><td><div class="example" style="width:150px; height:150px; overflow:visible"><img id="img<%# Eval("MALK") %>" src="<%# Eval("HINHANH") %>" class="imgzoom" style=" margin-left:15px;margin-top:15px; position:relative;float:left; width:120px; height:120px; cursor:pointer;overflow:visible;"/></div><br />
-                            <a href=""><%#Eval("TENLK") %></a><br />
+                            <a href="./product.aspx?id=<%# Eval("MALK") %>"><%#Eval("TENLK") %></a><br />
                             <span style="color: #900; font-weight: bold;"><%#Eval("DONGIA","{0:###,###,##0}")%>,000 VNĐ</span><br />
-                            <a class="button_add_small" title="Thêm vào giỏ hàng" onclick="themVaoGH('<%# Eval("MALK") %>')">&nbsp;&nbsp;Thêm</a>
+                            <a class="button_add_small" title="Thêm vào giỏ hàng" onclick="themVaoGH('<%# Eval("MALK") %>','1')">&nbsp;&nbsp;Thêm</a>
                             </td></tr>
                         </table>
                     </ItemTemplate>
