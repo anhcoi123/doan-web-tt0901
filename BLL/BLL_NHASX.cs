@@ -9,8 +9,9 @@ namespace BLL
 {
     public static class BLL_NHASX
     {
-        public static List<DAO.NhaSX> DBNSX(DataTable tb)
+        public static List<DAO.NhaSX> DanhSachNSX()
         {
+            DataTable tb = DAL_NHASX.DanhSachNSX();
             List<DAO.NhaSX> DB = new List<DAO.NhaSX>();
             foreach (DataRow a in tb.Rows)
             {
@@ -22,10 +23,7 @@ namespace BLL
             }
             return DB;
         }
-        public static DataTable NhaSX()
-        {
-            return DAL.DAL_NHASX.TenNSX();
-        }
+        
         public static int ThemNSX(string mansx,string tennsx)
         {
             return DAL.DAL_NHASX.ThemNSX(mansx, tennsx);
