@@ -61,6 +61,7 @@ namespace DAL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable tb = new DataTable();
             da.Fill(tb);
+            CloseConnection();
             return tb;
         }
 
@@ -76,6 +77,7 @@ namespace DAL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable tb = new DataTable();
             da.Fill(tb);
+            CloseConnection();
             return tb;
         }
 

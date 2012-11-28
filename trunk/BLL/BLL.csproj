@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BLL_DONDH.cs" />
     <Compile Include="BLL_LinhKien.cs" />
+    <Compile Include="BLL_LOAILK.cs" />
     <Compile Include="BLL_NHASX.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

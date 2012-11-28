@@ -8,26 +8,28 @@ using DAO;
 
 namespace DAL
 {
-    public static class LinhKien
+    public static class DAL_LinhKien
     {
         private static string sqlTatCaLinhKien = "EXECUTE SP_TATCALK";
-        private static string sqlTatCaLoaiLK = "EXECUTE SP_TATCALOAILK";
+        
         private static string sqlDonGia = "SELECT DONGIA FROM LINHKIEN WHERE MALK=@MALK";
         private static string sqlAdd = "EXECUTE SP_THEMLK @MALK,@TENLK,@DVTINH,@SOLUONG,@DONGIA,@THONGTIN,@HINHANH,@MALOAILK,@MANSX";
         private static string sqlUpdate = "UPDATE LINHKIEN SET TENLK=@TENLK,DVTINH=@DVTINH,SOLUONG=@SOLUONG,DONGIA=@DONGIA,THONGTIN=@THONGTIN,HINHANH=@HINHANH,MALOAILK=@MALOAILK WHERE MALK=@MALK";
         private static string sqlDelete = "DELETE FROM LINHKIEN WHERE MALK=@MALK";
         private static string sqlTimKiemMaLK = "EXECUTE SP_TIMLK_MALK @MALK";
-
         private static string sqlTimKiemMaLoaiLK = "SELECT * FROM LINHKIEN WHERE MALOAILK=@MALOAILK";
+        
         private static string sqlTimKiemTenLK = "EXECUTE SP_TIMLK_TENLK @TENLK";
         private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_MANSX @TENNSX";
         private static string sql8LinhKienNgauNhien = "SELECT TOP 8 * FROM LINHKIEN ORDER BY NEWID()";
 
-
-        public static DataTable DTTatCaLoaiLK()
+        public static DataTable DTTatCaLK_MaLoaiLK(string maloailk)
         {
-            return DALClass.GetDataTable(sqlTatCaLoaiLK);
+            string[] paraName = new string[] { "@MALOAILK" };
+            string[] paraValue = new string[] { maloailk };
+            return DALClass.GetDataTable(sqlTimKiemMaLoaiLK, paraName, paraValue);
         }
+        
 
         public static DataTable Get8Products()
         {
@@ -45,6 +47,8 @@ namespace DAL
             string[] paraValue = new string[] { id };
             return DALClass.GetDataTable(sqlDonGia, paraName, paraValue);
         }
+
+        
 
         public static DAO.LinhKien searchLK(string id)
         {

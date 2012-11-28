@@ -51,25 +51,51 @@
         <div class="box" id="module_cart">
             <div class="top"><img src="./image/basket.png" alt="" />Giỏ hàng</div>
             <div class="middle">
+                <%
+                if (Session["GioHang"]!=null)
+                {%>
                 <table cellspacing="0" cellpadding="2" style="width: 100%;">
-                    <%
-                        if (Session["GioHang"]!=null)
-                        {
-                            foreach (DAO.LinhKien lk in ((DAO.GioHang)Session["GioHang"]).LinhKien)
+                <%          foreach (DAO.LinhKien lk in ((DAO.GioHang)Session["GioHang"]).LinhKien)
                             {%>
-                                <tr>
+                                <tr style="border-bottom:1px solid black">
                                     <td width="1" valign="top" align="left">
                                         <span id="remove_<%=lk.MaLK %>" class="cart_remove" onclick="xoaLK('<%=lk.MaLK %>')"> </span>
                                     </td>
                                     <td style="width:1"><%=lk.SoLuong%> x </td>
-                                    <td><%=lk.TenLK%></td>
+                                    <td><a href="./product.aspx?id=<%=lk.MaLK%>"><%=lk.TenLK%></a></td>
                                 </tr>
-                           <%}
-                        }else{%>Giỏ hàng rỗng
-                    <%}%>
+                           <%}%>
                 </table>
+                <br>
+                <table cellspacing="0" cellpadding="0" align="right" style="display:inline-block;">
+                            <tr>
+                                <td align="right">
+                                    <span class="cart_module_total"><b>Chưa VAT:</b></span>
+                                </td>
+                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien / 1.1)%>,000 đ</span></td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <span class="cart_module_total"><b>VAT 10%:</b></span>
+                                </td>
+                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien/1.1 * 0.1)%>,000 đ</span></td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <span class="cart_module_total"><b>Tổng cộng:</b></span>
+                                </td>
+                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien)%>,000 đ</span></td>
+                            </tr>
+
+                        </table>
+                        <div style="padding-top:5px;text-align:center;clear:both;">
+                            <a href="./giohang.aspx">Giỏ</a>&nbsp;|&nbsp;<a href="./thanhtoan.aspx">Thanh toán</a>
+                        </div>
+                <% }else{%>
+                    Giỏ hàng rỗng
+                <%}%>
             </div>
       <div class="bottom">&nbsp;</div>
-    </div>
+      </div>
     </div>
 </div>

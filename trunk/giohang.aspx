@@ -55,8 +55,8 @@
                          foreach (DAO.LinhKien lk in ((DAO.GioHang)Session["GioHang"]).LinhKien)
                          {%>
                         <tr>
-                            <td><img src="<%= lk.HinhAnh%>" style="width:75px; height:75px"/></td>
-                            <td><%=lk.TenLK%></td>
+                            <td><a href="./product.aspx?id=<%=lk.MaLK%>"><img src="<%= lk.HinhAnh%>" style="width:75px; height:75px"/></a></td>
+                            <td><a href="./product.aspx?id=<%=lk.MaLK%>"><%=lk.TenLK%></a></td>
                             <td align="right"><input type="text" id="soLuong<%=lk.MaLK%>" value="<%=lk.SoLuong%>"  onchange="capNhat('<%=lk.MaLK %>')" style="text-align:right"/></td>
                             <td align="right"><label id="donGiaLK<%=lk.MaLK %>"><%=String.Format("{0:###,###,##0}", lk.DonGia)%></label></td>
                             <td align="right"><label id="thanhTienLK<%=lk.MaLK %>"><%=String.Format("{0:###,###,##0}", lk.DonGia * lk.SoLuong)%></label></td>
@@ -98,7 +98,7 @@
                         <tbody>
                             <tr>
                                 <td align="left">
-                                    <a class="button" href="giohang.aspx?xoaAll=true"><span>Xóa giỏ hàng</span></a>
+                                    <a class="button" href="giohang.aspx?method=deleteAll"><span>Xóa giỏ hàng</span></a>
                                 </td>
                                 <td align="center">
                                     <a class="button" href="./"><span>Tiếp tục mua hàng</span></a>

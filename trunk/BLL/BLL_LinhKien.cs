@@ -11,17 +11,12 @@ namespace BLL
     {
        public static DataTable DTGetAll()
        {
-            return DAL.LinhKien.GetallProducts();
-       }
-
-       public static DataTable DTTatCaLoaiLK()
-       {
-           return DAL.LinhKien.DTTatCaLoaiLK();
+            return DAL.DAL_LinhKien.GetallProducts();
        }
 
        public static DataTable DTGet8()
        {
-           return DAL.LinhKien.Get8Products();
+           return DAL.DAL_LinhKien.Get8Products();
        }
 
        public static List<DAO.LinhKien> DBLK()
@@ -48,22 +43,22 @@ namespace BLL
        }
         public static int InsertLK(string malk,string tenlk, int dvtinh,int soluong,int dongia,string thongtin,string hinhanh,string maloailk,string mansx )
         {
-            return DAL.LinhKien.AddLK(malk,tenlk,dvtinh,soluong,dongia,thongtin,hinhanh,maloailk,mansx);
+            return DAL.DAL_LinhKien.AddLK(malk,tenlk,dvtinh,soluong,dongia,thongtin,hinhanh,maloailk,mansx);
         }
 
         public static DAO.LinhKien searchLK(string id)
         {
-            return DAL.LinhKien.searchLK(id);
+            return DAL.DAL_LinhKien.searchLK(id);
         }
 
         public static DataTable DTSearchLK_MALK(string malk)
         {
-            return DAL.LinhKien.TimLK_Malk(malk);
+            return DAL.DAL_LinhKien.TimLK_Malk(malk);
         }
 
         public static DataTable DTSearchLK_TENLK(string tenlk)
         {
-            return DAL.LinhKien.TimLK_TenLK(tenlk);
+            return DAL.DAL_LinhKien.TimLK_TenLK(tenlk);
         }
 
         public static DAO.LinhKien SearchLK_TENLK(string tenlk)
@@ -82,7 +77,12 @@ namespace BLL
         }
         public static DataTable SearchLK_TENNSX(string tennsx)
         {
-            return DAL.LinhKien.TimLK_TenNSX(tennsx);
+            return DAL.DAL_LinhKien.TimLK_TenNSX(tennsx);
+        }
+
+        public static DataTable DTTatCaLK_MaLoaiLK(string maloailk)
+        {
+            return DAL.DAL_LinhKien.DTTatCaLK_MaLoaiLK(maloailk);
         }
 
     }

@@ -184,7 +184,7 @@ function () {
                         <table style="vertical-align:bottom; text-align:center;">
                             <tr style="width:25%"><td><div class="example" style="width:150px; height:150px; overflow:visible"><img id="img<%# Eval("MALK") %>" src="<%# Eval("HINHANH") %>" class="imgzoom" style=" margin-left:15px;margin-top:15px; position:relative;float:left; width:120px; height:120px; cursor:pointer;overflow:visible;"/></div><br />
                             <a href=""><%#Eval("TENLK") %></a><br />
-                            <span style="color:Red"><%#Eval("DONGIA","{0:###,###,##0}")%>,000 VNĐ</span><br />
+                            <span style="color: #900; font-weight: bold;"><%#Eval("DONGIA","{0:###,###,##0}")%>,000 VNĐ</span><br />
                             <a class="button_add_small" title="Thêm vào giỏ hàng" onclick="themVaoGH('<%# Eval("MALK") %>')">&nbsp;&nbsp;Thêm</a>
                             </td></tr>
                         </table>
