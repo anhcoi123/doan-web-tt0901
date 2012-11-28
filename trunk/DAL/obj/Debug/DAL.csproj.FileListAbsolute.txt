@@ -7,9 +7,15 @@ C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\bin\Debug\DAL.dll
 C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\DAO\bin\Debug\DAL.pdb
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAO.dll
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAO.pdb
-D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAL.dll
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\bin\Debug\DAL.pdb
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\obj\Debug\ResolveAssemblyReference.cache
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\obj\Debug\DAO.dll
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAO\obj\Debug\DAO.pdb
 D:\Document\ASP\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\bin\Debug\DAO.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\bin\Debug\DAO.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\bin\Debug\DAL.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\bin\Debug\DAL.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\obj\Debug\DAO.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\DAL\obj\Debug\DAO.pdb

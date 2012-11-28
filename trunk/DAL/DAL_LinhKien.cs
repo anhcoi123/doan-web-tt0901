@@ -10,16 +10,24 @@ namespace DAL
 {
     public static class LinhKien
     {
-        private static string sqlTatCaLinhKien = "SELECT * FROM LINHKIEN";
+        private static string sqlTatCaLinhKien = "EXECUTE SP_TATCALK";
+        private static string sqlTatCaLoaiLK = "EXECUTE SP_TATCALOAILK";
         private static string sqlDonGia = "SELECT DONGIA FROM LINHKIEN WHERE MALK=@MALK";
-        private static string sqlAdd = "EXECUTE SP_THEMLK(@MALK,@TENLK,@DVTINH,@SOLUONG,@DONGIA,@THONGTIN,@HINHANH,@MALOAILK,@MANSX)";
+        private static string sqlAdd = "EXECUTE SP_THEMLK @MALK,@TENLK,@DVTINH,@SOLUONG,@DONGIA,@THONGTIN,@HINHANH,@MALOAILK,@MANSX";
         private static string sqlUpdate = "UPDATE LINHKIEN SET TENLK=@TENLK,DVTINH=@DVTINH,SOLUONG=@SOLUONG,DONGIA=@DONGIA,THONGTIN=@THONGTIN,HINHANH=@HINHANH,MALOAILK=@MALOAILK WHERE MALK=@MALK";
         private static string sqlDelete = "DELETE FROM LINHKIEN WHERE MALK=@MALK";
-        private static string sqlTimKiemMaLK = "EXECUTE SP_TIMLK_MALK(@MALK)";
+        private static string sqlTimKiemMaLK = "EXECUTE SP_TIMLK_MALK @MALK";
+
         private static string sqlTimKiemMaLoaiLK = "SELECT * FROM LINHKIEN WHERE MALOAILK=@MALOAILK";
-        private static string sqlTimKiemTenLK = "EXECUTE SP_TIMLK_TENLK(@TENLK)";
-        private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_MANSX(@TENNSX)";
+        private static string sqlTimKiemTenLK = "EXECUTE SP_TIMLK_TENLK @TENLK";
+        private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_MANSX @TENNSX";
         private static string sql8LinhKienNgauNhien = "SELECT TOP 8 * FROM LINHKIEN ORDER BY NEWID()";
+
+
+        public static DataTable DTTatCaLoaiLK()
+        {
+            return DALClass.GetDataTable(sqlTatCaLoaiLK);
+        }
 
         public static DataTable Get8Products()
         {
@@ -30,6 +38,7 @@ namespace DAL
         {
             return DALClass.GetDataTable(sqlTatCaLinhKien);
         }
+
         public static DataTable GetPrice(string id)
         {
             string[] paraName = new string[] { "@MaLK" };
@@ -66,12 +75,14 @@ namespace DAL
             object[] paraValue = new object[] { tenlk, dvtinh, soluong, dongia, thongtin, hinhanh, maloailk, mansx };
             return DALClass.ExecNonQuery(sqlUpdate, paraName, paraValue);
         }
+
         public static DataTable TimLK_Malk(string malk)
         {
             string[] paraName = new string[] { "@MALK" };
             object[] paraValue = new object[] { malk };
             return DALClass.GetDataTable(sqlTimKiemMaLK, paraName, paraValue);
         }
+
         public static DataTable TimLK_TenLK(string tenlk)
         {
             string[] paraName = new string[] { "@TENLK" };
