@@ -10,7 +10,7 @@ public partial class columnLeft : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        LoadLoaiLK.DataSource = BLL_LinhKien.DTTatCaLoaiLK();
+        LoadLoaiLK.DataSource = BLL.BLL_LOAILK.DTTatCaLoaiLK();
         LoadLoaiLK.DataBind();
     }
 }

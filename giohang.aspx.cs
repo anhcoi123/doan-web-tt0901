@@ -35,7 +35,7 @@ public partial class giohang : System.Web.UI.Page
                 malk = Request["MALK"].ToString();
             if (malk.Equals(""))//Không có Ajax
             {
-                if (Request.QueryString["method"] != null && Request.QueryString["method"].ToString().ToLower().Equals("deleteAll"))
+                if (Request.QueryString["method"] != null && Request.QueryString["method"].ToString().ToLower().Equals("deleteall"))
                     Session["GioHang"] = null;
             }
             else // Được Ajax gọi
@@ -59,13 +59,18 @@ public partial class giohang : System.Web.UI.Page
                             gh.LinhKien.Remove(lk);
                             break;
                         }
-                        gh.ThanhTien -= lk.SoLuong * lk.DonGia;
                         if (method.Equals("update"))
+                        {
+                            gh.ThanhTien -= lk.SoLuong * lk.DonGia;
                             lk.SoLuong = SL;
+                        }
                         else
                             if (method.Equals("add"))
+                            {
+                                gh.ThanhTien -= lk.SoLuong * lk.DonGia;
                                 lk.SoLuong += 1;
-                        gh.ThanhTien += SL * lk.DonGia;
+                            }
+                        gh.ThanhTien += lk.SoLuong * lk.DonGia;
                         thanhtienLK = SL * lk.DonGia;
                         exist = true;
                         break;

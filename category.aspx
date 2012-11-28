@@ -4,76 +4,49 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
-  <div class="top">
+    <div class="top">
     <div class="left"></div>
     <div class="right"></div>
     <div class="center">
-      <h1><?php echo $heading_title; ?></h1>
+      <h1>
+        <%=title %>
+      </h1>
     </div>
   </div>
-  <div class="middle">
-    <?php if ($description) { ?>
-    <div style="margin-bottom: 15px;"><?php echo $description; ?></div>
-    <?php } ?>
-	<?php if (!$categories && !$products) { ?>
-    <div class="content"><?php echo $text_error; ?></div>
-    <?php } ?>
-    <?php if ($categories) { ?>
-    <table class="list">
-      <?php for ($i = 0; $i < sizeof($categories); $i = $i + 4) { ?>
-      <tr>
-        <?php for ($j = $i; $j < ($i + 4); $j++) { ?>
-        <td width="25%"><?php if (isset($categories[$j])) { ?>
-          <a href="<?php echo $categories[$j]['href']; ?>"><img src="<?php echo $categories[$j]['thumb']; ?>" title="<?php echo $categories[$j]['name']; ?>" alt="<?php echo $categories[$j]['name']; ?>" style="margin-bottom: 3px;" /></a><br />
-          <a href="<?php echo $categories[$j]['href']; ?>"><?php echo $categories[$j]['name']; ?></a>
-          <?php } ?></td>
+    <div class="middle">
+        <div class="sort">
+            <div class="div1">
+                <asp:DropDownList ID="sortList" runat="server" 
+                    onselectedindexchanged="sortList_SelectedIndexChanged" AutoPostBack="True">
+                    <asp:ListItem Selected="True" Value="default">Mặc định</asp:ListItem>
+                    <asp:ListItem Value="az">Theo tên A-Z</asp:ListItem>
+                    <asp:ListItem Value="za">Theo tên Z-A</asp:ListItem>
+                    <asp:ListItem Value="hl">Theo giá Cao-Thấp</asp:ListItem>
+                    <asp:ListItem Value="lh">Theo giá Thấp-Cao</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="div2">Sắp xếp theo: </div>
+        </div>
+    <asp:DataList ID="LoadCategory" runat="server" RepeatColumns="4">
+        <ItemTemplate>
+            
+        <table class="list">
+          <tr>
+            <td width="25%">
+              <a href="./product.aspx?id=<%#Eval("MALK") %>"><div class="example" style="width:150px; height:150px; overflow:visible"><img id="img<%# Eval("MALK") %>" src="./<%#Eval("HINHANH") %>" title="<%#Eval("TENLK") %>" alt="<%#Eval("TENLK") %>" class="imgzoom" style="margin-left:15px;margin-top:15px; position:relative;float:left; width:120px; height:120px; cursor:pointer;overflow:visible;"/></div></a><br />
+              <a href="./product.aspx?id=<%#Eval("MALK") %>"><%#Eval("TENLK") %></a><br />
+              <span style="color: #900; font-weight: bold"><%#Eval("DONGIA","{0:###,###,##0}")%>,000 VNĐ</span><br />
+              <a class="button_add_small" title="Thêm vào giỏ hàng" onclick="themVaoGH('<%# Eval("MALK") %>')">&nbsp;&nbsp;Thêm</a>
+              <br />
+            </td>
+          </tr>
+        </table>
+        <div class="pagination"><?php echo $pagination; ?></div>
         <?php } ?>
-      </tr>
-      <?php } ?>
-    </table>
-    <?php } ?>
-    <?php if ($products) { ?>
-    <div class="sort">
-      <div class="div1">
-        <select name="sort" onchange="location = this.value">
-          <?php foreach ($sorts as $sorts) { ?>
-          <?php if (($sort . '-' . $order) == $sorts['value']) { ?>
-          <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-          <?php } else { ?>
-          <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-          <?php } ?>
-          <?php } ?>
-        </select>
-      </div>
-      <div class="div2"><?php echo $text_sort; ?></div>
-    </div>
-    <table class="list">
-      <?php for ($i = 0; $i < sizeof($products); $i = $i + 4) { ?>
-      <tr>
-        <?php for ($j = $i; $j < ($i + 4); $j++) { ?>
-        <td width="25%"><?php if (isset($products[$j])) { ?>
-          <a href="<?php echo $products[$j]['href']; ?>"><img src="<?php echo $products[$j]['thumb']; ?>" title="<?php echo $products[$j]['name']; ?>" alt="<?php echo $products[$j]['name']; ?>" /></a><br />
-          <a href="<?php echo $products[$j]['href']; ?>"><?php echo $products[$j]['name']; ?></a><br />
-          <span style="color: #999; font-size: 11px;"><?php echo $products[$j]['model']; ?></span><br />
-          <?php if ($display_price) { ?>
-          <?php if (!$products[$j]['special']) { ?>
-          <span style="color: #900; font-weight: bold;"><?php echo $products[$j]['price']; ?></span>
-          <?php } else { ?>
-          <span style="color: #900; font-weight: bold; text-decoration: line-through;"><?php echo $products[$j]['price']; ?></span> <span style="color: #F00;"><?php echo $products[$j]['special']; ?></span>
-          <?php } ?>
-          <?php } ?>
-          <a class="button_add_small" href="<?php echo $products[$j]['add']; ?>" title="<?php echo $button_add_to_cart; ?>" >&nbsp;</a>
-          <br />
-          <?php if ($products[$j]['rating']) { ?>
-          <img src="catalog/view/theme/default/image/stars_<?php echo $products[$j]['rating'] . '.png'; ?>" alt="<?php echo $products[$j]['stars']; ?>" />
-          <?php } ?>
-          <?php } ?></td>
-        <?php } ?>
-      </tr>
-      <?php } ?>
-    </table>
-    <div class="pagination"><?php echo $pagination; ?></div>
-    <?php } ?>
+        </ItemTemplate>
+    </asp:DataList>
+    <asp:Label ID="txtNoData" runat="server"></asp:Label>
+	
   </div>
   <div class="bottom">
     <div class="left"></div>
