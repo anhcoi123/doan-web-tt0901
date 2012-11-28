@@ -1,219 +1,78 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="product.aspx.cs" Inherits="product" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="headerMess" Runat="Server">
+<%=title %>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
-<div id="content">
   <div class="top">
     <div class="left"></div>
     <div class="right"></div>
     <div class="center">
-      <h1><?php echo $heading_title; ?></h1>
+      <h1><%=title %></h1>
     </div>
   </div>
   <div class="middle">
+  <% if (!lk.MaLK.Equals(""))
+     { %>
     <div style="width: 100%; margin-bottom: 30px;">
       <table style="width: 100%; border-collapse: collapse;">
+      
         <tr>
-          <td style="text-align: center; width: 250px; vertical-align: top;"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="thickbox" rel="gallery"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" style="margin-bottom: 3px;" /></a><br />
-            <span style="font-size: 11px;"><?php echo $text_enlarge; ?></span></td>
+          <td style="text-align: center; width: 250px; vertical-align: top;"><a href="./<%=lk.HinhAnh %>" title="<%=lk.TenLK %>" class="thickbox" rel="gallery"><img src="./<%=lk.HinhAnh %>" title="<%=title %>" alt="<%=title %>" id="img<%=lk.MaLK %>" style="margin-bottom: 3px; width:250px;height:250px" /></a><br />
+            <span style="font-size: 11px;">Bấm vào để phóng to</span></td>
           <td style="padding-left: 15px; width: 296px; vertical-align: top;"><table width="100%">
-              <?php if ($display_price) { ?>
               <tr>
-                <td><b><?php echo $text_price; ?></b></td>
-                <td><?php if (!$special) { ?>
-                  <?php echo $price; ?>
-                  <?php } else { ?>
-                  <span style="text-decoration: line-through;"><?php echo $price; ?></span> <span style="color: #F00;"><?php echo $special; ?></span>
-                  <?php } ?></td>
-              </tr>
-              <?php } ?>
-              <tr>
-                <td><b><?php echo $text_availability; ?></b></td>
-                <td><?php echo $stock; ?></td>
+                <td><b>Giá: </b></td>
+                <td>
+                  <span style="color: #F00;"><%=String.Format("{0:###,###,##0}",lk.DonGia) %>,000 VNĐ</span>
+                </td>
               </tr>
               <tr>
-                <td><b><?php echo $text_model; ?></b></td>
-                <td><?php echo $model; ?></td>
+                <td><b>Còn hàng? :</b></td>
+                <td><%if (lk.SoLuong > 0)
+                         {
+                              %>Còn hàng<%}else{ %> Hết hàng <%} %>
+                </td>
               </tr>
-              <?php if ($manufacturer) { ?>
               <tr>
-                <td><b><?php echo $text_manufacturer; ?></b></td>
-                <td><a href="<?php echo str_replace('&', '&amp;', $manufacturers); ?>"><?php echo $manufacturer; ?></a></td>
+                <td><b>Nhà sản xuất:</b></td>
+                <td><a href="./manufactuter.aspx?id=<%=nhasx.Mansx %>"><%=nhasx.Tennsx %></a></td>
               </tr>
-              <?php } ?>
-              <?php if ($review_status) { ?>
 			  <tr>
-                <td><b><?php echo $text_average; ?></b></td>
-                <td><?php if ($average) { ?>
-                  <img src="catalog/view/theme/default/image/stars_<?php echo $average . '.png'; ?>" alt="<?php echo $text_stars; ?>" style="margin-top: 2px;" />
-                  <?php } else { ?>
-                  <?php echo $text_no_rating; ?>
-                  <?php } ?></td>
+                <td><b>Đánh giá trung bình: </b></td>
+                <td>Chưa có đánh giá</td>
               </tr>
-			  <?php } ?>
             </table>
             <br />
-            <?php if ($display_price) { ?>
-            <form action="<?php echo str_replace('&', '&amp;', $action); ?>" method="post" enctype="multipart/form-data" id="product">
-              <?php if ($options) { ?>
-              <b><?php echo $text_options; ?></b><br />
-              <div style="background: #FFFFCC; border: 1px solid #FFCC33; padding: 10px; margin-top: 2px; margin-bottom: 15px;">
-                <table style="width: 100%;">
-                  <?php foreach ($options as $option) { ?>
-                  <tr>
-                    <td><?php echo $option['name']; ?>:<br />
-                      <select name="option[<?php echo $option['option_id']; ?>]">
-                        <?php foreach ($option['option_value'] as $option_value) { ?>
-                        <option value="<?php echo $option_value['option_value_id']; ?>"><?php echo $option_value['name']; ?>
-                        <?php if ($option_value['price']) { ?>
-                        <?php echo $option_value['prefix']; ?><?php echo $option_value['price']; ?>
-                        <?php } ?>
-                        </option>
-                        <?php } ?>
-                      </select></td>
-                  </tr>
-                  <?php } ?>
-                </table>
-              </div>
-              <?php } ?>
-              <?php if ($display_price) { ?>
-              <?php if ($discounts) { ?>
-              <b><?php echo $text_discount; ?></b><br />
-              <div style="background: #F7F7F7; border: 1px solid #DDDDDD; padding: 10px; margin-top: 2px; margin-bottom: 15px;">
-                <table style="width: 100%;">
-                  <tr>
-                    <td style="text-align: right;"><b><?php echo $text_order_quantity; ?></b></td>
-                    <td style="text-align: right;"><b><?php echo $text_price_per_item; ?></b></td>
-                  </tr>
-                  <?php foreach ($discounts as $discount) { ?>
-                  <tr>
-                    <td style="text-align: right;"><?php echo $discount['quantity']; ?></td>
-                    <td style="text-align: right;"><?php echo $discount['price']; ?></td>
-                  </tr>
-                  <?php } ?>
-                </table>
-              </div>
-              <?php } ?>
-              <?php } ?>
               <div class="content">
-                <?php echo $text_qty; ?>
-                <input type="text" name="quantity" size="3" value="<?php echo $minimum; ?>" />
-                <a onclick="$('#product').submit();" id="add_to_cart" class="button"><span><?php echo $button_add_to_cart; ?></span></a>
-                <?php if ($minimum > 1) { ?><br/><small><?php echo $text_minimum; ?></small><?php } ?>
+                Số lượng:
+                <input type="text" name="quantity" size="3" value="1" id="quantity"/>
+                <a onclick="themVaoGH('<%=lk.MaLK %>',$('#quantity').val().toString())" id="add_to_cart" class="button"><span>Thêm vào giỏ</span></a>
               </div>
-              <div>
-                <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
-                <input type="hidden" name="redirect" value="<?php echo str_replace('&', '&amp;', $redirect); ?>" />                
-              </div>
-            </form>
-            <?php } ?></td>
         </tr>
       </table>
     </div>
     <div class="tabs">
-      <a tab="#tab_description"><?php echo $tab_description; ?></a>
-      <a tab="#tab_image"><?php echo $tab_image; ?>  (<?php echo count($images); ?>)</a>
-      <?php if ($review_status) { ?><a tab="#tab_review"><?php echo $tab_review; ?></a><?php } ?>
-      <a tab="#tab_related"><?php echo $tab_related; ?> (<?php echo count($products); ?>)</a>
+      <a tab="#tab_description">Mô tả</a>
+      <a tab="#tab_image">Hình ảnh(0)</a>
+      <a tab="#tab_related">Sản phẩm tương tự (0)</a>
     </div>
-    <div id="tab_description" class="tab_page"><?php echo $description; ?></div>
-    <?php if ($review_status) { ?>
-    <div id="tab_review" class="tab_page">
-      <div id="review"></div>
-      <div class="heading" id="review_title"><?php echo $text_write; ?></div>
-      <div class="content"><b><?php echo $entry_name; ?></b><br />
-        <input type="text" name="name" value="" />
-        <br />
-        <br />
-        <b><?php echo $entry_review; ?></b>
-        <textarea name="text" style="width: 98%;" rows="8"></textarea>
-        <span style="font-size: 11px;"><?php echo $text_note; ?></span><br />
-        <br />
-        <b><?php echo $entry_rating; ?></b> <span><?php echo $entry_bad; ?></span>&nbsp;
-        <input type="radio" name="rating" value="1" style="margin: 0;" />
-        &nbsp;
-        <input type="radio" name="rating" value="2" style="margin: 0;" />
-        &nbsp;
-        <input type="radio" name="rating" value="3" style="margin: 0;" />
-        &nbsp;
-        <input type="radio" name="rating" value="4" style="margin: 0;" />
-        &nbsp;
-        <input type="radio" name="rating" value="5" style="margin: 0;" />
-        &nbsp; <span><?php echo $entry_good; ?></span><br />
-        <br />
-        <b><?php echo $entry_captcha; ?></b><br />
-        <input type="text" name="captcha" value="" autocomplete="off" />
-        <br />
-        <img src="index.php?route=product/product/captcha" id="captcha" /></div>
-      <div class="buttons">
-        <table>
-          <tr>
-            <td align="right"><a onclick="review();" class="button"><span><?php echo $button_continue; ?></span></a></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <?php } ?>
+    <div id="tab_description" class="tab_page"><%=lk.ThongTin %></div>
     <div id="tab_image" class="tab_page">
-      <?php if ($images) { ?>
-      <div style="display: inline-block;">
-        <?php foreach ($images as $image) { ?>
-        <div style="display: inline-block; float: left; text-align: center; margin-left: 5px; margin-right: 5px; margin-bottom: 10px;"><a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="thickbox" rel="gallery"><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" style="border: 1px solid #DDDDDD; margin-bottom: 3px;" /></a><br />
-          <span style="font-size: 11px;"><?php echo $text_enlarge; ?></span></div>
-        <?php } ?>
-      </div>
-      <?php } else { ?>
-      <div style="background: #F7F7F7; border: 1px solid #DDDDDD; padding: 10px; margin-bottom: 10px;"><?php echo $text_no_images; ?></div>
-      <?php } ?>
+      <div style="background: #F7F7F7; border: 1px solid #DDDDDD; padding: 10px; margin-bottom: 10px;">Không có hình nào khác</div>
     </div>
     <div id="tab_related" class="tab_page">
-      <?php if ($products) { ?>
-      <table class="list">
-        <?php for ($i = 0; $i < sizeof($products); $i = $i + 4) { ?>
-        <tr>
-          <?php for ($j = $i; $j < ($i + 4); $j++) { ?>
-          <td width="25%"><?php if (isset($products[$j])) { ?>
-            <a href="<?php echo str_replace('&', '&amp;', $products[$j]['href']); ?>"><img src="<?php echo $products[$j]['thumb']; ?>" title="<?php echo $products[$j]['name']; ?>" alt="<?php echo $products[$j]['name']; ?>" /></a><br />
-            <a href="<?php echo str_replace('&', '&amp;', $products[$j]['href']); ?>"><?php echo $products[$j]['name']; ?></a><br />
-            <span style="color: #999; font-size: 11px;"><?php echo $products[$j]['model']; ?></span><br />
-            <?php if ($display_price) { ?>
-            <?php if (!$products[$j]['special']) { ?>
-            <span style="color: #900; font-weight: bold;"><?php echo $products[$j]['price']; ?></span>
-            <?php } else { ?>
-            <span style="color: #900; font-weight: bold; text-decoration: line-through;"><?php echo $products[$j]['price']; ?></span> <span style="color: #F00;"><?php echo $products[$j]['special']; ?></span>
-            <?php } ?>
-            <?php } ?>
-            <a class="button_add_small" href="<?php echo $products[$j]['add']; ?>" title="<?php echo $button_add_to_cart; ?>" >&nbsp;</a>
-            <br />
-            <?php if ($products[$j]['rating']) { ?>
-            <img src="catalog/view/theme/default/image/stars_<?php echo $products[$j]['rating'] . '.png'; ?>" alt="<?php echo $products[$j]['stars']; ?>" />
-            <?php } ?>
-            <?php } ?></td>
-          <?php } ?>
-        </tr>
-        <?php } ?>
-      </table>
-      <?php } else { ?>
-      <div style="background: #F7F7F7; border: 1px solid #DDDDDD; padding: 10px; margin-bottom: 10px;"><?php echo $text_no_related; ?></div>
-      <?php } ?>
+      <div style="background: #F7F7F7; border: 1px solid #DDDDDD; padding: 10px; margin-bottom: 10px;">Không có sản phẩm tương tự</div>
     </div>
+    <%}%>
+    <asp:Label ID="txtNoData" runat="server"></asp:Label>
   </div>
   <div class="bottom">
     <div class="left"></div>
     <div class="right"></div>
     <div class="center"></div>
   </div>
-  <?php if ($tags) { ?>
-  <div class="tags"><?php echo $text_tags; ?>
-  <?php foreach ($tags as $tag) { ?>
-  <a href="<?php echo $tag['href']; ?>"><?php echo $tag['tag']; ?></a>, 
-  <?php } ?>
-  </div>
-  <?php } ?>
-</div>
+  <script src="Scripts/tab.js" type="text/javascript"></script>
 <script type="text/javascript"><!--
     $('#review .pagination a').live('click', function () {
         $('#review').slideUp('slow');

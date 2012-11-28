@@ -68,7 +68,7 @@ public partial class giohang : System.Web.UI.Page
                             if (method.Equals("add"))
                             {
                                 gh.ThanhTien -= lk.SoLuong * lk.DonGia;
-                                lk.SoLuong += 1;
+                                lk.SoLuong += SL;
                             }
                         gh.ThanhTien += lk.SoLuong * lk.DonGia;
                         thanhtienLK = SL * lk.DonGia;
@@ -80,8 +80,9 @@ public partial class giohang : System.Web.UI.Page
                 if (!exist && !method.Equals("delete"))
                 {
                     DAO.LinhKien lk = BLL.BLL_LinhKien.searchLK(Request["MALK"].ToString());
+                    lk.SoLuong = SL;
                     gh.LinhKien.Add(lk);
-                    gh.ThanhTien += lk.DonGia;
+                    gh.ThanhTien += lk.DonGia *SL;
                     thanhtienLK = lk.DonGia;
                 }
                 Session["GioHang"] = gh;

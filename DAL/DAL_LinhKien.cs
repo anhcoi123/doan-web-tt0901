@@ -60,8 +60,9 @@ namespace DAL
             lk.DVTinh = dtLK.Rows[0]["DVTinh"].ToString();
             lk.HinhAnh = dtLK.Rows[0]["HINHANH"].ToString();
             lk.MaLK = dtLK.Rows[0]["MALK"].ToString();
-            lk.SoLuong = 1;
+            lk.SoLuong = int.Parse(dtLK.Rows[0]["SOLUONG"].ToString());
             lk.TenLK = dtLK.Rows[0]["TENLK"].ToString();
+            lk.Mansx = dtLK.Rows[0]["MANSX"].ToString();
             lk.ThongTin = dtLK.Rows[0]["THONGTIN"].ToString();
             return lk;
         }
