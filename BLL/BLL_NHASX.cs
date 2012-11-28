@@ -23,7 +23,12 @@ namespace BLL
             }
             return DB;
         }
-        
+
+        public static DataTable DTDanhSachNSX()
+        {
+            return DAL_NHASX.DanhSachNSX();
+        }
+
         public static int ThemNSX(string mansx,string tennsx)
         {
             return DAL.DAL_NHASX.ThemNSX(mansx, tennsx);

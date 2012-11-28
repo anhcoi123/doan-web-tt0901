@@ -161,25 +161,10 @@ function () {
     <uc2:columnRight ID="columnRight" runat="server" />
     <div id="content">
         <div class="ErrorMes"></div>
-        <div class="top">
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="center">
-               <h1>
-                    <asp:ContentPlaceHolder id="headerMess" runat="server">
-                    </asp:ContentPlaceHolder>
-                </h1>
-            </div>
-        </div>
-        <div class="middle">
-            <form id="form1" runat="server">
-    
+        <form id="form1" runat="server">
                 <asp:ContentPlaceHolder id="MainContent" runat="server">
-        
                 </asp:ContentPlaceHolder>
-    
-            </form>
-        </div>
+        </form>
         <div class="bottom">
             <div class="left"></div>
             <div class="right"></div>
