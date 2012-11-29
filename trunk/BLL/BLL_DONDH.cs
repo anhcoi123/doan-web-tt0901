@@ -39,9 +39,9 @@ namespace BLL
             }
             return DB;
         }
-        public static int InsertDonDH(string madh, string makh, DateTime ngaydh, int thanhtien)
+        public static int InsertDonDH(string madh, string makh, DateTime ngaydh, int thanhtien, string tinhtrang)
         {
-            return DAL.DAL_DONDH.AddDonDH(madh, makh, ngaydh, thanhtien);
+            return DAL.DAL_DONDH.AddDonDH(madh, makh, ngaydh, thanhtien,tinhtrang);
         }
         public static int InsertCTDonDH(string madh, string malk, int soluong, int dongiaban)
         {

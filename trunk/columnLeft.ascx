@@ -15,4 +15,19 @@
       </div>
       <div class="bottom">&nbsp;</div>
     </div>
+    <div class="box">
+      <div class="top"><img src="./image/brands.png" alt="" />Nhà sản xuất</div>
+      <div id="category" class="middle">
+      <ul>
+      <asp:Repeater ID="LoadNhaSX" runat="server">
+        <ItemTemplate>
+            <li>
+                <a href="./manufacturer.aspx?&mansx=<%# Eval("MANSX")%>"><%# Eval("TENNSX") %></a>
+            </li>
+        </ItemTemplate>
+        </asp:Repeater>
+        </ul>
+      </div>
+      <div class="bottom">&nbsp;</div>
+    </div>
 </div>

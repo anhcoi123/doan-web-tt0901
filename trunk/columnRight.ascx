@@ -72,19 +72,19 @@
                                 <td align="right">
                                     <span class="cart_module_total"><b>Chưa VAT:</b></span>
                                 </td>
-                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien / 1.1)%>,000 đ</span></td>
+                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien )%>,000 đ</span></td>
                             </tr>
                             <tr>
                                 <td align="right">
                                     <span class="cart_module_total"><b>VAT 10%:</b></span>
                                 </td>
-                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien/1.1 * 0.1)%>,000 đ</span></td>
+                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien * 0.1)%>,000 đ</span></td>
                             </tr>
                             <tr>
                                 <td align="right">
                                     <span class="cart_module_total"><b>Tổng cộng:</b></span>
                                 </td>
-                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien)%>,000 đ</span></td>
+                                <td align="right"><span class="cart_module_total"><%=String.Format("{0:###,###,##0}", ((DAO.GioHang)Session["GioHang"]).ThanhTien *1.1)%>,000 đ</span></td>
                             </tr>
 
                         </table>

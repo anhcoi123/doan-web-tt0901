@@ -41,6 +41,18 @@ namespace BLL
             return nsx;
         }
 
+        public static string TenNhaSX(string mansx)
+        {
+            DAO.NhaSX nsx = new DAO.NhaSX();
+            DataTable dt = DAL_NHASX.DTTimNSX(mansx);
+            if (dt.Rows.Count != 0)
+            {
+                nsx.Tennsx = dt.Rows[0]["TenNSX"].ToString();
+                return nsx.Tennsx;
+            }
+            return "Không tìm thấy nhà sản xuất";
+        }
+
         public static int ThemNSX(string mansx,string tennsx)
         {
             return DAL.DAL_NHASX.ThemNSX(mansx, tennsx);

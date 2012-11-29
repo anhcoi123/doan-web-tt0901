@@ -86,9 +86,9 @@ public partial class giohang : System.Web.UI.Page
                     thanhtienLK = lk.DonGia;
                 }
                 Session["GioHang"] = gh;
-                string subtotal = String.Format("{0:###,###,##0}", gh.ThanhTien / 1.1) + ",000 VNĐ";
-                string vat = String.Format("{0:###,###,##0}", gh.ThanhTien / 1.1 * 0.1) + ",000 VNĐ";
-                string total = String.Format("{0:###,###,##0}", gh.ThanhTien) + ",000 VNĐ";
+                string total = String.Format("{0:###,###,##0}", gh.ThanhTien * 1.1) + ",000 VNĐ";
+                string vat = String.Format("{0:###,###,##0}", gh.ThanhTien * 0.1) + ",000 VNĐ";
+                string subtotal = String.Format("{0:###,###,##0}", gh.ThanhTien) + ",000 VNĐ";
                 Response.Write(String.Format("{0:###,###,##0}", thanhtienLK) + "|" + subtotal + "|" + vat + "|" + total + "|");//"<span style=\"color:green\">Đã thêm vào giỏ hàng</span>");
             }
         }

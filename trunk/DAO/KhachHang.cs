@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAO
 {
-    class KhachHang
+    public class KhachHang
     {
         private string _maKH;
 
@@ -48,6 +48,14 @@ namespace DAO
         {
             get { return _soDT; }
             set { _soDT = value; }
+        }
+
+        private string _CMND;
+
+        public string CMND
+        {
+            get { return _CMND; }
+            set { _CMND = value; }
         }
 
     }

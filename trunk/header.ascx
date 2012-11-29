@@ -36,6 +36,7 @@
     $(document).ready(function () {
         //route = getURLVar('route');
         var route = "";
+        
         route = window.location.pathname.split('/').pop();
         if (!route) {
             $('#tab_home').addClass('selected');
@@ -44,11 +45,11 @@
             part = route.split('?');
             if (route == '') {
                 $('#tab_home').addClass('selected');
-            } else if (route.match(/^giohang.*$/)) {
+            } else if (route.toLowerCase().match(/^giohang.*$/)) {
                 $('#tab_cart').addClass('selected');
-            } else if (route.match(/^register.*$/)) {
-                $('#tab_register').addClass('selected');
-            } else if (route.match(/^giohang.*$/)) {
+            } else if (route.toLowerCase().match(/^login.*$/)) {
+                $('#tab_login').addClass('selected');
+            } else if (route.toLowerCase().match(/^giohang.*$/)) {
                 $('#tab_cart').addClass('selected');
             } else if (part[0] == 'checkout') {
                 $('#tab_checkout').addClass('selected');
@@ -61,13 +62,13 @@
 //--></script>
 <div id="container">
 <div id="header">
-        <div id="site_title"><a href="./">SHOP<span> LINH KIỆN</span></a></div>
+        <div id="site_title"><a href="<%=ResolveUrl("~/")%>">SHOP<span> LINH KIỆN</span></a></div>
         <div class="div4">
-                <a id="tab_home" href="./" class="selected">Trang chủ</a>
-                <a id="tab_cart" href="giohang.aspx">Giỏ hàng</a>
-                <a id="tab_register" href="../Account/Register.aspx">Đăng ký</a>
-                <a href="about.html">Thông tin</a>
-                <a href="contact.html">Liên hệ</a>
+                <a id="tab_home" href="<%=ResolveUrl("~/")%>" class="selected">Trang chủ</a>
+                <a id="tab_cart" href="<%=ResolveUrl("~/")%>giohang.aspx">Giỏ hàng</a>
+                <a id="tab_login" href="<%=ResolveUrl("~/")%>Login.aspx">Đăng nhập</a>
+                <a href="<%=ResolveUrl("~/")%>about.html">Thông tin</a>
+                <a href="<%=ResolveUrl("~/")%>contact.html">Liên hệ</a>
             <br style="clear: left" />
         </div> <!-- end of templatemo_menu -->
       <div class="div5">
@@ -77,11 +78,7 @@
         <div id="search">
           <div class="div8">Tìm kiếm</div>
           <div class="div9">
-            <?php if ($keyword) { ?>
-            <input type="text" value="<?php echo $keyword; ?>" id="filter_keyword" />
-            <?php } else { ?>
-            <input type="text" value="<?php echo $text_keyword; ?>" id="filter_keyword" onclick="this.value = '';" onkeydown="this.style.color = '#000000'" style="color: #999;" />
-            <?php } ?>
+            <input type="text" value="Từ khóa" id="filter_keyword" onclick="this.value = '';" onkeydown="this.style.color = '#000000'" style="color: #999;" />
             <select id="filter_category_id">
               <option value="0"><?php echo $text_category; ?></option>
               <?php foreach ($categories as $category) { ?>

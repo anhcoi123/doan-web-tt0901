@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="category.aspx.cs" Inherits="category" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="manufacturer.aspx.cs" Inherits="manufacturer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 <%=title %>
@@ -28,7 +28,7 @@
             </div>
             <div class="div2">Sắp xếp theo: </div>
         </div>
-    <asp:DataList ID="LoadCategory" runat="server" RepeatColumns="4">
+    <asp:DataList ID="LoadManufactuter" runat="server" RepeatColumns="4">
         <ItemTemplate>
             
         <table class="list">
