@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALClass.cs" />
+    <Compile Include="DAL_Admin.cs" />
     <Compile Include="DAL_DONDH.cs" />
     <Compile Include="DAL_LinhKien.cs" />
     <Compile Include="DAL_LOAILK.cs" />

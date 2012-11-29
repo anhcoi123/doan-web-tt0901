@@ -10,7 +10,7 @@ namespace DAL
 {
     public static class DALClass
     {
-        private static string sqlConnectionString = @"Data Source=.\SQLEXPRESS;Database=QLBANHANG;Trusted_Connection=True;";
+        private static string sqlConnectionString = @"Data Source=KHOADD-PC\SQLEXPRESS;Database=QLBANHANG;Trusted_Connection=True";
         private static SqlConnection sqlConnection = new SqlConnection(sqlConnectionString);
 
         #region Open/Close Connection
