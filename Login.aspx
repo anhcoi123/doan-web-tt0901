@@ -24,7 +24,7 @@ Anh Khoa SHOP - Đăng nhập
     <div style="margin-bottom: 10px; display: inline-block; width: 100%;">
       <div style="float: left; display: inline-block; width: 49%;"><b style="margin-bottom: 2px; display: block;">Khách mới</b>
         <div style="background: #F7F7F7; border: 1px solid #DDDDDD; padding: 10px; min-height: 210px;">
-          <form action="<%=ResolveUrl("~/")%>Account/Register.aspx" method="post" enctype="multipart/form-data" id="account">
+          <form action="<%=ResolveUrl("~/")%>Register.aspx" method="post" enctype="multipart/form-data" id="account">
             <p>Lựa chọn thanh toán</p>
             <label for="register" style="cursor: pointer;">
               <%if (Session["GioHang"] == null || (Session["GioHang"] != null && ((DAO.GioHang)Session["GioHang"]).LinhKien.Count() == 0))

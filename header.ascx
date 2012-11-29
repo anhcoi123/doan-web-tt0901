@@ -47,7 +47,7 @@
                 $('#tab_home').addClass('selected');
             } else if (route.toLowerCase().match(/^giohang.*$/)) {
                 $('#tab_cart').addClass('selected');
-            } else if (route.toLowerCase().match(/^login.*$/)) {
+            } else if (route.toLowerCase().match(/^login.*$/) || route.toLowerCase().match(/^register.*$/)) {
                 $('#tab_login').addClass('selected');
             } else if (route.toLowerCase().match(/^giohang.*$/)) {
                 $('#tab_cart').addClass('selected');
