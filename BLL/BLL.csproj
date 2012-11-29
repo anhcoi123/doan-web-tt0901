@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_ADMIN.cs" />
     <Compile Include="BLL_DONDH.cs" />
     <Compile Include="BLL_LinhKien.cs" />
     <Compile Include="BLL_LOAILK.cs" />
