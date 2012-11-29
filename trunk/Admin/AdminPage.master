@@ -48,6 +48,14 @@
             <tr>
                 <td>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <table class="style1">
+                            <tr>
+                                <td>
+                                    &nbsp;</td>
+                                <td>
+                                    &nbsp;</td>
+                            </tr>
+                        </table>
                     </asp:ContentPlaceHolder>
                     <br />
                     <br />

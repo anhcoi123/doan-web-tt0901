@@ -9,7 +9,7 @@ namespace BLL
 {
     public class BLL_ADMIN
     {
-        public static Boolean KiemTraDN(string tendangnhap, string matkhau,string Role)
+        public static Boolean KiemTraDN(string tendangnhap, string matkhau)
         {
             DataTable tb = DAL_Admin.KTDangNhap(tendangnhap, matkhau);
             if (tb == null)
