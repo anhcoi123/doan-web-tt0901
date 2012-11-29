@@ -13,13 +13,13 @@ namespace DAL
 {
     public static class DAL_DONDH
     {
-        private static string sqlThemDonDH = "EXECUTE SP_THEMDONDH(@MADH,@MAKH,@NGAYDH,@THANHTIEN)";
+        private static string sqlThemDonDH = "EXECUTE SP_THEMDONDH(@MADH,@MAKH,@NGAYDH,@THANHTIEN,@TINHTRANG)";
         private static string sqlThemCTDonDH = "EXECUTE SP_THEMCTDONDH(@MADH,@MALK,@SOLUONG,@DONGIABAN)";
         
-        public static int AddDonDH(string madh, string makh, DateTime ngaydh, int thanhtien)
+        public static int AddDonDH(string madh, string makh, DateTime ngaydh, int thanhtien,string tinhtrang)
         {
-            string[] paraName = new string[] { "@MADH", "@MAKH", "NGAYDH", "THANHTIEN" };
-            object[] paraValue = new object[] { madh, makh, ngaydh, thanhtien };
+            string[] paraName = new string[] { "@MADH", "@MAKH", "@NGAYDH", "@THANHTIEN","@TINHTRANG"};
+            object[] paraValue = new object[] { madh, makh, ngaydh, thanhtien , tinhtrang};
             
             return DALClass.ExecNonQuery(sqlThemDonDH,paraName,paraValue);
         }

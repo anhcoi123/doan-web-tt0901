@@ -12,5 +12,7 @@ public partial class columnLeft : System.Web.UI.UserControl
     {
         LoadLoaiLK.DataSource = BLL.BLL_LOAILK.DTTatCaLoaiLK();
         LoadLoaiLK.DataBind();
+        LoadNhaSX.DataSource = BLL.BLL_NHASX.DTDanhSachNSX();
+        LoadNhaSX.DataBind();
     }
 }

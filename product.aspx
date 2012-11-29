@@ -36,7 +36,7 @@
               </tr>
               <tr>
                 <td><b>Nhà sản xuất:</b></td>
-                <td><a href="./manufactuter.aspx?id=<%=nhasx.Mansx %>"><%=nhasx.Tennsx %></a></td>
+                <td><a href="./manufacturer.aspx?mansx=<%=nhasx.Mansx %>"><%=nhasx.Tennsx %></a></td>
               </tr>
 			  <tr>
                 <td><b>Đánh giá trung bình: </b></td>

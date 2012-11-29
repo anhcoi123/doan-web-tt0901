@@ -12,6 +12,7 @@ namespace DAL
         private static string sqlThemNSX = "EXECUTE SP_THEMNSX @MANSX,@TENNSX";
         private static string sqlUpdateTenNSX = "EXECUTE SP_UPDATETENNSX @MANSX,@TENNSX";
         private static string sqlTimTenNSX_MANSX = "EXEC SP_TIMNSX_MANSX @MANSX";
+
         public static DataTable DanhSachNSX()
         {
             return DALClass.GetDataTable(sqlNhaSX); 

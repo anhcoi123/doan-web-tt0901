@@ -20,7 +20,7 @@ namespace DAL
         private static string sqlTimKiemMaLoaiLK = "SELECT * FROM LINHKIEN WHERE MALOAILK=@MALOAILK";
         
         private static string sqlTimKiemTenLK = "EXECUTE SP_TIMLK_TENLK @TENLK";
-        private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_MANSX @TENNSX";
+        private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_NHASX @TENNSX";
         private static string sql8LinhKienNgauNhien = "SELECT TOP 8 * FROM LINHKIEN ORDER BY NEWID()";
 
         public static DataTable DTTatCaLK_MaLoaiLK(string maloailk)
