@@ -9,3 +9,11 @@ C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\DAL.pdb
 C:\Users\Khoadd\Documents\Visual Studio 2010\Projects\ASP\BLL\bin\Debug\DAO.pdb
 D:\Document\ASP\BLL\obj\Debug\ResolveAssemblyReference.cache
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\BLL.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\BLL.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\DAL.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\DAO.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\DAO.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\DAL.pdb
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\BLL.dll
+D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\BLL.pdb
