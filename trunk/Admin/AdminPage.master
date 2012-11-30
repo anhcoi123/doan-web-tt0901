@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminPage.master.cs" Inherits="Admin_AdminPage" %>
 
+<%@ Register src="AdminMenu.ascx" tagname="AdminMenu" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,10 +10,6 @@
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
         .style2
         {
             text-align: center;
@@ -30,44 +28,41 @@
             font-size: xx-large;
             color: #FFFFFF;
         }
+        .style7
+        {
+            width: 88%;
+        }
+        .style8
+        {
+            width: 12%;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <table class="style1">
+   <div style="width:100%">
+        <table width="100%">
             <tr>
-                <td class="style2">
-                    <br />
+                <td class="style2" colspan="3">               
                     <br class="style3" />
                     <span class="style5">ADMIN PAGE</span><br class="style4" />
-                    <br />
-                    <br />
                 </td>
             </tr>
             <tr>
-                <td>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        <table class="style1">
-                            <tr>
-                                <td>
-                                    &nbsp;</td>
-                                <td>
-                                    &nbsp;</td>
-                            </tr>
-                        </table>
-                    </asp:ContentPlaceHolder>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-
+                <td class="style8">
+                <uc1:AdminMenu ID="AdminMenu1" runat="server" />
                 </td>
+                <td class="style7">
+                    <form id="form1" runat="server">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        
+                    </asp:ContentPlaceHolder>
+                    </form>
+                </td>
+               <!-- <td width="25%"></td>-->
             </tr>
         </table>
 
-    </div>
-    </form>
+   </div> 
 </body>
 </html>

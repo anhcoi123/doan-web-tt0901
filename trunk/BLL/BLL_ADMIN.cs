@@ -12,7 +12,7 @@ namespace BLL
         public static Boolean KiemTraDN(string tendangnhap, string matkhau)
         {
             DataTable tb = DAL_Admin.KTDangNhap(tendangnhap, matkhau);
-            if (tb == null)
+            if (tb.Rows.Count==0)
             {
                 return false;
             }

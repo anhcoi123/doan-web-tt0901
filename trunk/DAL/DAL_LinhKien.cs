@@ -22,6 +22,11 @@ namespace DAL
         private static string sqlTimKiemTenLK = "EXECUTE SP_TIMLK_TENLK @TENLK";
         private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_NHASX @TENNSX";
         private static string sql8LinhKienNgauNhien = "SELECT TOP 8 * FROM LINHKIEN ORDER BY NEWID()";
+        private static string sqlGetLK = "SELECT MAMH,TENMH,DONGIA,SOLUONG,TENLOAILK,TENNSX FROM LINHKIEN, LOAILK,NHASX WHERE LINHKIEN.MALOAILK=LOAILK.MALOAILK AND LINHKIEN.MANSX=NHASX.MANSX";
+
+
+
+        
 
         public static DataTable DTTatCaLK_MaLoaiLK(string maloailk)
         {
@@ -96,9 +101,10 @@ namespace DAL
         }
         public static DataTable TimLK_TenNSX(string tennsx)
         {
-            string[] paraName = new string[] { "TENNSX" };
+            string[] paraName = new string[] { "@TENNSX" };
             object[] paraValue = new object[] { tennsx };
             return DALClass.GetDataTable(sqlTimKiemTenNSX, paraName, paraValue);
         }
+        
     }
 }
