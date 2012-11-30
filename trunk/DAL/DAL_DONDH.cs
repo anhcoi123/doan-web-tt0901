@@ -13,10 +13,16 @@ namespace DAL
 {
     public static class DAL_DONDH
     {
-        private static string sqlThemDonDH = "EXECUTE SP_THEMDONDH(@MADH,@MAKH,@NGAYDH,@THANHTIEN,@TINHTRANG)";
-        private static string sqlThemCTDonDH = "EXECUTE SP_THEMCTDONDH(@MADH,@MALK,@SOLUONG,@DONGIABAN)";
-        
-        public static int AddDonDH(string madh, string makh, DateTime ngaydh, int thanhtien,string tinhtrang)
+        private static string sqlThemDonDH = "EXECUTE SP_THEMDONDH @MADH,@MAKH,@NGAYDH,@THANHTIEN,@TINHTRANG";
+        private static string sqlThemCTDonDH = "EXECUTE SP_THEMCTDONDH @MADH,@MALK,@SOLUONG,@DONGIABAN";
+        private static string sqlDanhSachDonDH = "SELECT * FROM DONDH";
+
+        public static int SoDongBangDonDH()
+        {
+            return DALClass.GetDataTable(sqlDanhSachDonDH).Rows.Count;
+        }
+
+        public static int AddDonDH(string madh, string makh, string ngaydh, int thanhtien,string tinhtrang)
         {
             string[] paraName = new string[] { "@MADH", "@MAKH", "@NGAYDH", "@THANHTIEN","@TINHTRANG"};
             object[] paraValue = new object[] { madh, makh, ngaydh, thanhtien , tinhtrang};
@@ -29,14 +35,7 @@ namespace DAL
             object[] paraValue = new object[] { madh, malk, soluong, dongiaban };
             return DALClass.ExecNonQuery(sqlThemCTDonDH, paraName, paraValue);
         }
-        public static void ThemGioHangVaoDonDH(DAO.GioHang gh,string madh)
-        {
-            foreach (DAO.LinhKien lk in gh.LinhKien)
-            {
-                AddCTDonDH(madh, lk.MaLK, lk.SoLuong, lk.DonGia);
-
-            }
-        }
+        
         
     }
 }
