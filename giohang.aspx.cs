@@ -45,6 +45,11 @@ public partial class giohang : System.Web.UI.Page
                 gh = (DAO.GioHang)Session["GioHang"];
                 bool exist = false;
                 int SL = int.Parse(Request["SoLuong"]); // Lấy số lượng
+                if (SL <= 0)
+                {
+                    Exception ex= new Exception("Số lượng phải là số dương");
+                    throw ex;
+                }
                 string method = "";
                 if (Request["method"] != null)
                     method = Request["method"];
@@ -70,6 +75,11 @@ public partial class giohang : System.Web.UI.Page
                                 gh.ThanhTien -= lk.SoLuong * lk.DonGia;
                                 lk.SoLuong += SL;
                             }
+                        if (lk.SoLuong <= 0)
+                        {
+                            gh.LinhKien.Remove(lk);
+                            break;
+                        }
                         gh.ThanhTien += lk.SoLuong * lk.DonGia;
                         thanhtienLK = SL * lk.DonGia;
                         exist = true;
