@@ -8,7 +8,6 @@
         }
         .style10
         {
-            width: 59px;
         }
         .style11
         {
@@ -19,22 +18,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table class="style9">
         <tr>
-            <td class="style10">
-                &nbsp;</td>
-            <td class="style11">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
+            <td class="style10" colspan="7">
+                QUẢN LÝ LINH KIỆN</td>
+            <td colspan="2">
+                <asp:Button ID="btnThemLK" runat="server" onclick="btnThemLK_Click" 
+                    Text="Thêm LK" Width="61px" />
+            </td>
             
         </tr>
         <tr>
@@ -43,38 +32,38 @@
             <td class="style11">
                 TÊN MH</td>
             <td>
-                ĐƠN GIÁ</td>
+                ĐV TÍNH</td>
             <td>
                 SỐ LƯỢNG</td>
             <td>
-                TÊN LOẠI LK</td>
+                ĐƠN GIÁ</td>
             <td>
-                HÃNG SX</td>
+                THÔNG TIN</td>
+            <td>
+                HÌNH ẢNH</td>
             <td>
                 XÓA</td>
+            
             <td>
                 SỬA</td>
             
         </tr>
-        <tr>
-            <td class="style10">
-                &nbsp;</td>
-            <td class="style11">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
+        <asp:Repeater ID="load" runat="server">
+            <ItemTemplate>
+            <tr>
+            <td><%# Eval("MALK") %></td>
+            <td><%# Eval("TENLK") %></td>
+            <td><%# Eval("DVTINH") %></td>
+            <td><%# Eval("SOLUONG")%></td>
+            <td><%# Eval("DONGIA")%></td>
+            <td><%# Eval("THONGTIN") %></td>
+            <td><%# Eval("HINHANH") %></td>
+            <td><a href="AdminLinhKien_SuaLK.aspx?MALK=<%#Eval(MALK) %>">Sửa</a></td>
+            <td></td>
             
-        </tr>
+            </tr>
+            </ItemTemplate>
+        </asp:Repeater>
     </table>
 </asp:Content>
 

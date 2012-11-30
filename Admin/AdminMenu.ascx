@@ -1,12 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AdminMenu.ascx.cs" Inherits="AdminMenu" %>
 <style type="text/css">
-    .style1
-    {
-        width: 13%;
-    }
     .style2
     {
         height: 21px;
+        text-align: center;
+    }
+    .style3
+    {
+        text-align: center;
     }
 </style>
 <table width="100%">
@@ -17,13 +18,13 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="style3">
             <asp:HyperLink ID="HyperLink2" runat="server" 
                 NavigateUrl="~/Admin/AdminDonDH.aspx">Đơn Đặt Hàng</asp:HyperLink>
         </td>
     </tr>
     <tr>
-        <td>
+        <td class="style3">
             <asp:HyperLink ID="HyperLink3" runat="server" 
                 NavigateUrl="~/Admin/AdminKhachHang.aspx">Khách Hàng</asp:HyperLink>
         </td>
