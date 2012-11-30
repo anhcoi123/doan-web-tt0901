@@ -6,7 +6,8 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <form runat="server">
-<asp:CreateUserWizard ID="RegisterUser" Runat="server" OnCreatedUser="RegisterUser_CreatedUser">
+<asp:CreateUserWizard ID="RegisterUser" Runat="server" 
+    OnCreatedUser="RegisterUser_CreatedUser" onload="RegisterUser_Load">
   <WizardSteps>
     <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
     <ContentTemplate>
