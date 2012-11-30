@@ -16,21 +16,37 @@ public partial class category : System.Web.UI.Page
         
         if (Request["maloailk"]!=null)
             maloailk=Request["maloailk"].ToString();
-        title = BLL.BLL_LOAILK.TenLoaiLK_MALOAILK(maloailk);
-        if (title.Equals("Không tìm thấy loại linh kiện"))
-            txtNoData.Text="Không tìm thấy loại linh kiện";
+        if (Request["keyword"] != null)
+        {
+            if (maloailk.Equals("0"))
+                maloailk = "%";
+            title = "Tìm kiếm";
+            string keyword = Request["keyword"].ToString();
+                dt = BLL.BLL_LOAILK.DTSearchKeyWord(maloailk, keyword);
+                LoadCategory.DataSource = dt;
+                LoadCategory.DataBind();
+                if (LoadCategory.Items.Count == 0)
+                    txtNoData.Text = "Không tìm được sản phẩm nào có từ khóa như bạn nhập!";
+        }
         else
         {
-            dt=BLL.BLL_LinhKien.DTTatCaLK_MaLoaiLK(maloailk);
-            LoadCategory.DataSource=dt;
-            LoadCategory.DataBind();
-            if (LoadCategory.Items.Count==0)
-                txtNoData.Text="Không có sản phẩm nào thuộc loại này!";
+            title = BLL.BLL_LOAILK.TenLoaiLK_MALOAILK(maloailk);
+            if (title.Equals("Không tìm thấy loại linh kiện"))
+                txtNoData.Text = "Không tìm thấy loại linh kiện";
+            else
+            {
+                dt = BLL.BLL_LinhKien.DTTatCaLK_MaLoaiLK(maloailk);
+                LoadCategory.DataSource = dt;
+                LoadCategory.DataBind();
+                if (LoadCategory.Items.Count == 0)
+                    txtNoData.Text = "Không có sản phẩm nào thuộc loại này!";
+            }
         }
     }
+
     protected void sortList_SelectedIndexChanged(object sender, EventArgs e)
     {
-        string defaultview = "MALK ASX";
+        string defaultview = "MALK ASC";
         string az = "TENLK ASC";
         string za = "TENLK DESC";
         string hl = "DONGIA DESC";

@@ -11,6 +11,17 @@ namespace DAL
     {
         private static string sqlTenLoaiLK = "EXEC SP_TATCALOAILK_TENLOAILK @MALOAILK";
         private static string sqlTatCaLoaiLK = "EXECUTE SP_TATCALOAILK";
+        private static string sqlSearchLoaiLK_Keyword = "SELECT * FROM LINHKIEN WHERE MALOAILK LIKE @MALOAILK AND ((TENLK LIKE '%' + @KEYWORD + '%') OR (THONGTIN LIKE '%' + @KEYWORD + '%'))";
+
+
+
+        public static DataTable DTSearchKeyword(string MaLoaiLK,string keyword)
+        {
+            string[] paraName = new string[] { "@MALOAILK","@KEYWORD" };
+            string[] paraValue = new string[] { MaLoaiLK,keyword };
+            return DALClass.GetDataTable(sqlSearchLoaiLK_Keyword, paraName, paraValue);
+        }
+
 
         public static DataTable DTTatCaLoaiLK()
         {

@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
-<form id="form1" runat="server">
+
     <div class="top">
     <div class="left"></div>
     <div class="right"></div>
@@ -18,6 +18,7 @@
     <div class="middle">
         <div class="sort">
             <div class="div1">
+            <form id="form1" runat="server">
                 <asp:DropDownList ID="sortList" runat="server" onselectedindexchanged="sortList_SelectedIndexChanged" AutoPostBack="True">
                     <asp:ListItem Selected="True" Value="default">Mặc định</asp:ListItem>
                     <asp:ListItem Value="az">Theo tên A-Z</asp:ListItem>
@@ -25,6 +26,7 @@
                     <asp:ListItem Value="hl">Theo giá Cao-Thấp</asp:ListItem>
                     <asp:ListItem Value="lh">Theo giá Thấp-Cao</asp:ListItem>
                 </asp:DropDownList>
+                </form>
             </div>
             <div class="div2">Sắp xếp theo: </div>
         </div>
@@ -53,6 +55,6 @@
     <div class="right"></div>
     <div class="center"></div>
   </div>
-  </form>
+  
 </asp:Content>
 

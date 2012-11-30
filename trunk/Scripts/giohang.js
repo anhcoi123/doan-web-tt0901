@@ -35,7 +35,7 @@ function themVaoGH(a,b) {
         // callback handler that will be called on error
         error: function (jqXHR, textStatus, errorThrown) {
             // log the error to the console
-            $(".ErrorMes").html(errorThrown);
+            $(".ErrorMes").html(textStatus);
         },
         // callback handler that will be called on completion
         // which means, either on success or error

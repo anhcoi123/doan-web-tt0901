@@ -19,5 +19,10 @@ namespace BLL
             return DAL.DAL_LOAILK.TenLoaiLK_MALOAILK(MaLoaiLK);
         }
 
+        public static DataTable DTSearchKeyWord(string maloailk, string keyword)
+        {
+            return DAL.DAL_LOAILK.DTSearchKeyword(maloailk, keyword);
+        }
+
     }
 }

@@ -10,6 +10,7 @@ public partial class header : System.Web.UI.UserControl
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        LoadCategory.DataSource = BLL.BLL_LOAILK.DTTatCaLoaiLK();
+        LoadCategory.DataBind();
     }
 }

@@ -24,13 +24,17 @@ public partial class Account_Login : System.Web.UI.Page
         if (kh != null && !kh.TenKH.Equals(""))
         {
             success = "Đăng nhập thành công";
-            string view = "";
             if (Request["view"] != null)
             {
-                view = Request["view"].ToString();
+                redirect = Request["view"].ToString();
             }
             Session["KhachHang"] = kh;
-            Response.Redirect("./" + view);
+            if (redirect != "")
+            {
+                Response.Redirect("./" + redirect + ".aspx");
+            }
+            else
+                Response.Redirect("./");
         }
         else
             success = "Lỗi: Không thể đăng nhập vui lòng kiểm tra lại tên đăng nhập/mật khẩu";
