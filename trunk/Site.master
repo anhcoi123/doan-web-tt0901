@@ -114,15 +114,12 @@ function () {
         </div>
         <div class="middle">
             <div id="SP" align="center">
-                <asp:DataList ID="load" runat="server" RepeatDirection="Vertical" RepeatColumns="4" CssClass="list">
+                <asp:DataList ID="load" runat="server" RepeatDirection="Vertical" RepeatColumns="4" CssClass="list" ItemStyle-Width="25%">
                     <ItemTemplate>
-                        <table style="vertical-align:bottom; text-align:center;">
-                            <tr style="width:25%"><td><div class="example" style="width:150px; height:150px; overflow:visible"><img id="img<%# Eval("MALK") %>" src="<%=ResolveUrl("~/")%><%# Eval("HINHANH") %>" class="imgzoom" style=" margin-left:15px;margin-top:15px; position:relative;float:left; width:120px; height:120px; cursor:pointer;overflow:visible;"/></div><br />
+                            <a href="./product.aspx?id=<%#Eval("MALK") %>"><div class="example" style="width:150px; height:150px; overflow:visible"><img id="img<%# Eval("MALK") %>" src="<%=ResolveUrl("~/")%><%# Eval("HINHANH") %>" class="imgzoom" style=" margin-left:15px;margin-top:15px; position:relative;float:left; width:120px; height:120px; cursor:pointer;overflow:visible;"/></div></a><br />
                             <a href="<%=ResolveUrl("~/")%>product.aspx?id=<%# Eval("MALK") %>"><%#Eval("TENLK") %></a><br />
                             <span style="color: #900; font-weight: bold;"><%#Eval("DONGIA","{0:###,###,##0}")%>,000 VNĐ</span><br />
                             <a class="button_add_small" title="Thêm vào giỏ hàng" onclick="themVaoGH('<%# Eval("MALK") %>','1')">&nbsp;&nbsp;Thêm</a>
-                            </td></tr>
-                        </table>
                     </ItemTemplate>
                 </asp:DataList>
             </div>
