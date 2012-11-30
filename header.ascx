@@ -63,10 +63,22 @@
 <div id="container">
 <div id="header">
         <div id="site_title"><a href="<%=ResolveUrl("~/")%>">SHOP<span> LINH KIỆN</span></a></div>
+        <div class="div3">
+        <% if (Session["KhachHang"] != null && !((DAO.KhachHang)Session["KhachHang"]).TenKH.Equals(""))
+           {%> Chào bạn <%= ((DAO.KhachHang)Session["KhachHang"]).TenKH%>
+           <%} %>
+        </div>
         <div class="div4">
                 <a id="tab_home" href="<%=ResolveUrl("~/")%>" class="selected">Trang chủ</a>
                 <a id="tab_cart" href="<%=ResolveUrl("~/")%>giohang.aspx">Giỏ hàng</a>
+                <% if (Session["KhachHang"] != null && !((DAO.KhachHang)Session["KhachHang"]).TenKH.Equals(""))
+                   { %>
+                <a id="tab_login" href="<%=ResolveUrl("~/")%>Login.aspx?logout=true">Đăng xuất</a>
+                <%}
+                   else
+                   { %>
                 <a id="tab_login" href="<%=ResolveUrl("~/")%>Login.aspx">Đăng nhập</a>
+                <%} %>
                 <a href="<%=ResolveUrl("~/")%>about.html">Thông tin</a>
                 <a href="<%=ResolveUrl("~/")%>contact.html">Liên hệ</a>
             <br style="clear: left" />

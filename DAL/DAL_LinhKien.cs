@@ -22,8 +22,6 @@ namespace DAL
         private static string sqlTimKiemTenLK = "EXECUTE SP_TIMLK_TENLK @TENLK";
         private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_NHASX @TENNSX";
         private static string sql8LinhKienNgauNhien = "SELECT TOP 8 * FROM LINHKIEN ORDER BY NEWID()";
-        private static string sqlGetLK = "SELECT MAMH,TENMH,DONGIA,SOLUONG,TENLOAILK,TENNSX FROM LINHKIEN, LOAILK,NHASX WHERE LINHKIEN.MALOAILK=LOAILK.MALOAILK AND LINHKIEN.MANSX=NHASX.MANSX";
-
 
 
         
