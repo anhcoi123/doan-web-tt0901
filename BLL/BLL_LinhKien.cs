@@ -84,6 +84,6 @@ namespace BLL
         {
             return DAL.DAL_LinhKien.DTTatCaLK_MaLoaiLK(maloailk);
         }
-
+        
     }
 }
