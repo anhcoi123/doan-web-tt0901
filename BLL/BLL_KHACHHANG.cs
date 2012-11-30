@@ -12,7 +12,7 @@ namespace BLL
         static string TaoMaKH()
         {
             string tmp = "";
-            int n = DAL_KhachHang.SoDongBangKH();
+            int n = DAL_KHACHHANG.SoDongBangKH();
             int ntemp=n;
             while (ntemp != 0)
             {
@@ -25,7 +25,7 @@ namespace BLL
 
         public static DAO.KhachHang KTraDangNhap(string tendangnhap, string matkhau)
         {
-            DataTable dt = DAL_KhachHang.DTDanhSachKH();
+            DataTable dt = DAL_KHACHHANG.DTDanhSachKH();
             DAO.KhachHang kh=new DAO.KhachHang();
             foreach (DataRow r in dt.Rows)
             {
@@ -47,7 +47,7 @@ namespace BLL
         public static string ThemKH(string tenkh, string tendn, string matkhau, string diachi, string sodt, string cmnd)
         {
             string makh=TaoMaKH();
-            DataTable dt = DAL_KhachHang.DTDanhSachKH();
+            DataTable dt = DAL_KHACHHANG.DTDanhSachKH();
             foreach (DataRow r in dt.Rows)
             {
                 if (r["TENDANGNHAP"].ToString().Trim().Equals(tendn))

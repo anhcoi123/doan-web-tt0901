@@ -13,11 +13,17 @@ namespace DAL
         private static string sqlInsert = "EXEC SP_KHACHHANG_THEMKH @MAKH,@TENKKH,@TENDANGNHAP,@MATKHAU,@DIACHI,@SODT,@CMND,@ROLE";
         private static string sqlUpdate = "UPDATE KHACHHANG SET TENKH=@TENKH,MATKHAU=@MATKHAU,DIACHI=@DIACHI,SODT=@SODT,CMND=@CMND,ROLE=@ROLE WHERE MAKH=@MAKH";
         private static string sqlSearchKH_MAKH = "EXEC SP_TIMKHACHHANG_MAKH @MAKH";
-        private static string sqlDanhSachKH = "SELECT * FROM KHACHHANG";
+        private static string sqlDanhSachKH1 = "SELECT * FROM KHACHHANG";
+        private static string sqlDanhSachKH = "SELECT * FROM KHACHHANG WHERE ROLE='0'";
 
+
+        public static DataTable DTDanhSachKH()
+        {
+            return DALClass.GetDataTable(sqlDanhSachKH);
+        }
         public static int SoDongBangKH()
         {
-            return DALClass.GetDataTable(sqlDanhSachKH).Rows.Count;
+            return DALClass.GetDataTable(sqlDanhSachKH1).Rows.Count;
         }
 
         public static DataTable DTTatCaUser()
