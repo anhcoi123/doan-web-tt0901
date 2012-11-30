@@ -14,7 +14,7 @@ public partial class Admin_AdminLogin : System.Web.UI.Page
     {
         if (Session["ID"] != null)
         {
-            Response.Redirect("../Admin/AdminPage.aspx?DaDangNhap=in");
+            Response.Redirect("./Admin/AdminPage.aspx?DaDangNhap=in");
         }
     }
     protected void btnLogin_Click(object sender, EventArgs e)

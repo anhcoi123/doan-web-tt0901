@@ -58,5 +58,13 @@ namespace DAO
             set { _CMND = value; }
         }
 
+        private string _Role;
+
+        public string Role
+        {
+            get { return _Role; }
+            set { _Role = value; }
+        }
+
     }
 }
