@@ -16,7 +16,7 @@ namespace BLL
             int ntemp=n;
             while (ntemp != 0)
             {
-                tmp += table[ntemp % 36 - 1].ToString();
+                tmp += table[ntemp % 36].ToString();
                 ntemp = ntemp / 36;
             }
 
