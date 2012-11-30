@@ -10,7 +10,7 @@ namespace DAL
     public class DAL_KHACHHANG
     {
         private static string sqlKhachHang = "EXEC SP_KHACHHANG";
-        private static string sqlInsert = "EXEC SP_KHACHHANG_THEMKH @MAKH,@TENKKH,@TENDANGNHAP,@MATKHAU,@DIACHI,@SODT,@CMND,@ROLE";
+        private static string sqlInsert = "EXEC SP_THEMKHACHHANG @MAKH,@TENKH,@TENDANGNHAP,@MATKHAU,@DIACHI,@SODT,@CMND,@ROLE";
         private static string sqlUpdate = "UPDATE KHACHHANG SET TENKH=@TENKH,MATKHAU=@MATKHAU,DIACHI=@DIACHI,SODT=@SODT,CMND=@CMND,ROLE=@ROLE WHERE MAKH=@MAKH";
         private static string sqlSearchKH_MAKH = "EXEC SP_TIMKHACHHANG_MAKH @MAKH";
         private static string sqlDanhSachKH1 = "SELECT * FROM KHACHHANG";
@@ -63,7 +63,7 @@ namespace DAL
         {
             string[] paraName = new string[] { "@MAKH" };
             object[] paraValue = new object[] { makh };
-            return DALClass.GetDataTable(sqlUpdate, paraName, paraValue);
+            return DALClass.GetDataTable(sqlSearchKH_MAKH, paraName, paraValue);
         }
 
     }

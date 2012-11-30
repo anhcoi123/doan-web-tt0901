@@ -55,7 +55,7 @@ namespace BLL
                 if (r["CMND"].ToString().Trim().Equals(cmnd))
                     return "Lỗi: Đã có người sử dụng số CMND này, vui lòng kiểm tra lại";
             }
-            return DAL_KhachHang.ThemKH(makh, tenkh, tendn, matkhau, diachi, sodt, cmnd, "0")==1?"Đã tạo thành công tài khoản":"Lỗi: Không thể tạo tài khoản";
+            return DAL_KHACHHANG.InsertKH(makh, tenkh, tendn, matkhau, diachi, sodt, cmnd, "0")==1?"Đã tạo thành công tài khoản":"Lỗi: Không thể tạo tài khoản";
         }
     }
 }
