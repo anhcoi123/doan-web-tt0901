@@ -14,15 +14,10 @@ namespace BLL
         {
             string tmp = "";
             int n = DAL_DONDH.SoDongBangDonDH();
-            if (n <= 35)
-            {
-                tmp = table[n].ToString();
-                return tmp;
-            }
             int ntemp = n;
             while (ntemp != 0)
             {
-                tmp += table[ntemp % 36 - 1].ToString();
+                tmp += table[ntemp % 36].ToString();
                 ntemp = ntemp / 36;
             }
             if (tmp.Equals("")) tmp = "0";
