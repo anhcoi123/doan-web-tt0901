@@ -70,6 +70,7 @@
                 </asp:Repeater>
               
             </select>
+            </form>
           </div>
           <div class="div10">&nbsp;&nbsp;<a onclick="moduleSearch();" class="button"><span>Tìm kiếm</span></a></div>
         </div>
