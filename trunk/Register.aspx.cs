@@ -12,6 +12,8 @@ public partial class Account_Register : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+        ((CheckBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("ShareInfoCheckBox")).Checked = false;
+        
     }
 
     protected void RegisterUser_CreatedUser(object sender, EventArgs e)
@@ -26,4 +28,8 @@ public partial class Account_Register : System.Web.UI.Page
         Response.Redirect(continueUrl);
     }
 
+    protected void RegisterUser_Load(object sender, EventArgs e)
+    {
+        
+    }
 }
