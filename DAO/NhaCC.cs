@@ -28,9 +28,9 @@ namespace DAO
             get { return _diaChi; }
             set { _diaChi = value; }
         }
-        private int _soDT;
+        private string _soDT;
 
-        public int SoDT
+        public string SoDT
         {
             get { return _soDT; }
             set { _soDT = value; }
