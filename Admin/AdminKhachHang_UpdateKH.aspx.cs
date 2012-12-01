@@ -12,6 +12,8 @@ public partial class Admin_AdminKhachHang_UpdateKH : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["admin"] == null)
+            Response.Redirect("./AdminLogin.aspx");
         string MaKH = Request.QueryString["MAKH"];
         DataTable tb = BLL.BLL_KHACHHANG.searchKH(MaKH);
         lblMaKH.Text = MaKH;

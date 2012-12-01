@@ -41,15 +41,15 @@
             <asp:Repeater ID="load" runat="server">
             <ItemTemplate>
             <tr>
-                <td><%# Eval("MAKH") %>></td>
-                <td><%# Eval("TENKH") %>></td>
-                <td><%# Eval("TENDANGNHAP")%>></td>
-                <td><%# Eval("MATKHAU") %>></td>
-                <td><%# Eval("DIACHI")%>></td>
-                <td><%# Eval("SODT") %>></td>
-                <td><%# Eval("CMND") %>></td>
-                <td><%# Eval("ROLE") %>></td>
-                <td><a href="AdminKhachHang_SuaKH.aspx?MAKH=<%# Eval(MAKH) %>>">Sửa</a></td>
+                <td><%# Eval("MAKH") %></td>
+                <td><%# Eval("TENKH") %></td>
+                <td><%# Eval("TENDANGNHAP")%></td>
+                <td><%# Eval("MATKHAU") %></td>
+                <td><%# Eval("DIACHI")%></td>
+                <td><%# Eval("SODT") %></td>
+                <td><%# Eval("CMND") %></td>
+                <td><%# Eval("ROLE") %></td>
+                <td><a href="AdminKhachHang_SuaKH.aspx?MAKH=<%# Eval("MAKH") %>>">Sửa</a></td>
             </tr>
             </ItemTemplate>
             </asp:Repeater>

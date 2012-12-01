@@ -11,7 +11,8 @@ public partial class Admin_AdminKhachHang_ThemKH : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["admin"] == null)
+            Response.Redirect("./AdminLogin.aspx");
     }
     protected void btnThem_Click(object sender, EventArgs e)
     {
@@ -24,6 +25,6 @@ public partial class Admin_AdminKhachHang_ThemKH : System.Web.UI.Page
         kh.SoDT = txtSoDT.Text;
         kh.CMND = txtCMND.Text;
         kh.Role = ddlRole.SelectedItem.Text;
-        BLL.BLL_KHACHHANG.InsertKH(kh.MaKH, kh.TenKH, kh.TenDangNhap, kh.MatKhau, kh.DiaChi, kh.SoDT, kh.CMND, kh.Role);
+        BLL.BLL_KhachHang.ThemKH(kh.TenKH, kh.TenDangNhap, kh.MatKhau, kh.DiaChi, kh.SoDT, kh.CMND);
     }
 }

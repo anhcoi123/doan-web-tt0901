@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminPage.master" AutoEventWireup="true" CodeFile="AdminLogin.aspx.cs" Inherits="Admin_AdminLogin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/PageLogin.master" AutoEventWireup="true" CodeFile="AdminLogin.aspx.cs" Inherits="Admin_AdminLogin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
@@ -22,7 +22,7 @@
             <td class="style6">
                 Password</td>
             <td>
-                <asp:TextBox ID="txtPass" runat="server" Width="213px"></asp:TextBox>
+                <asp:TextBox ID="txtPass" runat="server" Width="213px" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>

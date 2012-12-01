@@ -13,12 +13,16 @@ public partial class Admin_AdminLinhKien_SuaLK : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string MaLK = Request.QueryString["MALK"];
-        DataTable tb = BLL.BLL_LinhKien.DTSearchLK_MALK(MaLK);
-        lblMaLK.Text = MaLK;
-        txtTenLK.Text = tb.Rows[0]["TENLK"].ToString();
-        txtDonGia.Text = (tb.Rows[0]["DONGIA"].ToString());
-
+        if (Session["admin"] == null)
+            Response.Redirect("./AdminLogin.aspx");
+        if (!IsPostBack)
+        {
+            string MaLK = Request.QueryString["MALK"];
+            DataTable tb = BLL.BLL_LinhKien.DTSearchLK_MALK(MaLK);
+            lblMaLK.Text = MaLK;
+            txtTenLK.Text = tb.Rows[0]["TENLK"].ToString();
+            txtDonGia.Text = (tb.Rows[0]["DONGIA"].ToString());
+        }
     }
     protected void btnSua_Click(object sender, EventArgs e)
     {

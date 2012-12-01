@@ -9,6 +9,7 @@ public partial class Admin_AdminPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["admin"] == null)
+            Response.Redirect("./AdminLogin.aspx");
     }
 }

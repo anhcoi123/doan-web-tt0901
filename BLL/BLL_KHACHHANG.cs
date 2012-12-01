@@ -57,5 +57,9 @@ namespace BLL
             }
             return DAL_KHACHHANG.InsertKH(makh, tenkh, tendn, matkhau, diachi, sodt, cmnd, "0")==1?"Đã tạo thành công tài khoản":"Lỗi: Không thể tạo tài khoản";
         }
+        public static DataTable DTGetAll()
+        {
+            return DAL.DAL_KHACHHANG.DTTatCaUser();
+        }
     }
 }

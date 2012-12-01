@@ -42,10 +42,10 @@
             <td>
                 HÌNH ẢNH</td>
             <td>
-                XÓA</td>
+                SỬA</td>
             
             <td>
-                SỬA</td>
+                &nbsp;</td>
             
         </tr>
         <asp:Repeater ID="load" runat="server">
@@ -57,9 +57,9 @@
             <td><%# Eval("SOLUONG")%></td>
             <td><%# Eval("DONGIA")%></td>
             <td><%# Eval("THONGTIN") %></td>
-            <td><%# Eval("HINHANH") %></td>
-            <td><a href="AdminLinhKien_SuaLK.aspx?MALK=<%#Eval(MALK) %>">Sửa</a></td>
-            <td></td>
+            <td><img src="../<%# Eval("HINHANH") %>"  style="width:70px; height:70px"/></td>
+            <td><a href="AdminLinhKien_SuaLK.aspx?MALK=<%#Eval("MALK") %>">Sửa</a></td>
+            <td><a href="AdminLinhKien_XoaLK.aspx?MALK=<%#Eval("MALK") %>">Xóa</a></td>
             
             </tr>
             </ItemTemplate>

@@ -17,3 +17,11 @@ D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\DAO.pdb
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\bin\Debug\DAL.pdb
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\BLL.dll
 D:\G\document\IT\Thuc hanh HK7\DoAn\ASP.NET\BLL\obj\Debug\BLL.pdb
+D:\Document\ASP\BLL\bin\Debug\BLL.dll
+D:\Document\ASP\BLL\bin\Debug\BLL.pdb
+D:\Document\ASP\BLL\bin\Debug\DAL.dll
+D:\Document\ASP\BLL\bin\Debug\DAO.dll
+D:\Document\ASP\BLL\bin\Debug\DAO.pdb
+D:\Document\ASP\BLL\bin\Debug\DAL.pdb
+D:\Document\ASP\BLL\obj\Debug\BLL.dll
+D:\Document\ASP\BLL\obj\Debug\BLL.pdb

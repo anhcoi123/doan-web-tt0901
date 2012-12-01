@@ -12,9 +12,16 @@ public partial class Admin_AdminLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request["logout"] != null)
+        {
+            Session["ID"] = null;
+            Session["admin"] = null;
+            Session["Pass"] = null;
+            return;
+        }
         if (Session["ID"] != null)
         {
-            Response.Redirect("./Admin/AdminPage.aspx?DaDangNhap=in");
+            Response.Redirect("../Admin/AdminPage.aspx?DaDangNhap=in");
         }
     }
     protected void btnLogin_Click(object sender, EventArgs e)
@@ -23,7 +30,7 @@ public partial class Admin_AdminLogin : System.Web.UI.Page
         {
             Session["ID"] = txtID.Text;
             Session["Pass"] = txtPass.Text;
-            Session["Admin"] = "true";
+            Session["admin"] = "true";
             Response.Redirect("../Admin/AdminPage.aspx?TenDN="+txtID.Text+"&i=login");
 
         }

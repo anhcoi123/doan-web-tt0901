@@ -14,7 +14,7 @@ namespace DAL
         
         private static string sqlDonGia = "SELECT DONGIA FROM LINHKIEN WHERE MALK=@MALK";
         private static string sqlAdd = "EXECUTE SP_THEMLK @MALK,@TENLK,@DVTINH,@SOLUONG,@DONGIA,@THONGTIN,@HINHANH,@MALOAILK,@MANSX";
-        private static string sqlUpdate = "UPDATE LINHKIEN SET TENLK=@TENLK,DVTINH=@DVTINH,SOLUONG=@SOLUONG,DONGIA=@DONGIA,THONGTIN=@THONGTIN,HINHANH=@HINHANH,MALOAILK=@MALOAILK WHERE MALK=@MALK";
+        //private static string sqlUpdate = "UPDATE LINHKIEN SET TENLK=@TENLK,DVTINH=@DVTINH,SOLUONG=@SOLUONG,DONGIA=@DONGIA,THONGTIN=@THONGTIN,HINHANH=@HINHANH,MALOAILK=@MALOAILK WHERE MALK=@MALK";
         private static string sqlDelete = "DELETE FROM LINHKIEN WHERE MALK=@MALK";
         private static string sqlTimKiemMaLK = "EXECUTE SP_TIMLK_MALK @MALK";
         private static string sqlTimKiemMaLoaiLK = "SELECT * FROM LINHKIEN WHERE MALOAILK=@MALOAILK";
@@ -22,8 +22,9 @@ namespace DAL
         private static string sqlTimKiemTenLK = "EXECUTE SP_TIMLK_TENLK @TENLK";
         private static string sqlTimKiemTenNSX = "EXECUTE SP_TIMLK_NHASX @TENNSX";
         private static string sql8LinhKienNgauNhien = "SELECT TOP 8 * FROM LINHKIEN ORDER BY NEWID()";
+        private static string sqlUpdate = "UPDATE LINHKIEN SET TENLK=@TENLK,DONGIA=@DONGIA WHERE MALK=@MALK";
 
-
+        
         
 
         public static DataTable DTTatCaLK_MaLoaiLK(string maloailk)
@@ -70,18 +71,25 @@ namespace DAL
             return lk;
         }
 
-        public static int AddLK(string malk, string tenlk, int dvtinh, int soluong, int dongia, string thongtin, string hinhanh, string maloailk, string mansx)
+        public static int AddLK(string malk, string tenlk, string dvtinh, int soluong, int dongia, string thongtin, string hinhanh, string maloailk, string mansx)
         {
             string[] paraName = new string[] { "@MALK", "@TENLK", "@DVTINH", "@SOLUONG", "@DONGIA", "@THONGTIN", "@HINHANH", "@MALOAILK", "@MANSX" };
             object[] paraValue = new object[] { malk, tenlk, dvtinh, soluong, dongia, thongtin, hinhanh, maloailk, mansx };
             return DALClass.ExecNonQuery(sqlAdd, paraName, paraValue);
         }
 
-        public static int UpdateLK(string tenlk, int dvtinh, int soluong, int dongia, string thongtin, string hinhanh, string maloailk, string mansx)
+        public static int UpdateLK(string malk,string tenlk, int dongia)
         {
-            string[] paraName = new string[] { "@TENLK", "@DVTINH", "@SOLUONG", "@DONGIA", "@THONGTIN", "@HINHANH", "@MALOAILK", "@MANSX" };
-            object[] paraValue = new object[] { tenlk, dvtinh, soluong, dongia, thongtin, hinhanh, maloailk, mansx };
+            string[] paraName = new string[] {"@MALK", "@TENLK", "@DONGIA"};
+            object[] paraValue = new object[] {malk, tenlk, dongia};
             return DALClass.ExecNonQuery(sqlUpdate, paraName, paraValue);
+        }
+
+        public static int XoaLK(string malk)
+        {
+            string[] paraName = new string[] { "@MALK" };
+            object[] paraValue = new object[] { malk };
+            return DALClass.ExecNonQuery(sqlDelete,paraName,paraValue);
         }
 
         public static DataTable TimLK_Malk(string malk)
