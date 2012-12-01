@@ -41,9 +41,19 @@ namespace BLL
            }
            return DB;
        }
-        public static int InsertLK(string malk,string tenlk, int dvtinh,int soluong,int dongia,string thongtin,string hinhanh,string maloailk,string mansx )
+        public static int InsertLK(string malk,string tenlk, string dvtinh,int soluong,int dongia,string thongtin,string hinhanh,string maloailk,string mansx )
         {
             return DAL.DAL_LinhKien.AddLK(malk,tenlk,dvtinh,soluong,dongia,thongtin,hinhanh,maloailk,mansx);
+        }
+
+        public static int UpdateLK(string malk, string tenlk, int dongia)
+        {
+            return DAL.DAL_LinhKien.UpdateLK(malk, tenlk,dongia);
+        }
+
+        public static int DeleteLK(string malk)
+        {
+            return DAL.DAL_LinhKien.XoaLK(malk);
         }
 
         public static DAO.LinhKien searchLK(string id)

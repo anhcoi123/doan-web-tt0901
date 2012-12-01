@@ -49,10 +49,10 @@
                 </td>
             </tr>
             <tr>
-                <td class="style8">
+                <td style="vertical-align:top">
                 <uc1:AdminMenu ID="AdminMenu1" runat="server" />
                 </td>
-                <td class="style7">
+                <td class="style7" >
                     <form id="form1" runat="server">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         
