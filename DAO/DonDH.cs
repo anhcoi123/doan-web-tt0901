@@ -21,9 +21,9 @@ namespace DAO
             get { return _maKH; }
             set { _maKH = value; }
         }
-        private DateTime _ngayDH;
+        private string _ngayDH;
 
-        public DateTime NgayDH
+        public string NgayDH
         {
             get { return _ngayDH; }
             set { _ngayDH = value; }

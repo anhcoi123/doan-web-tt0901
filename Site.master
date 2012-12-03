@@ -79,17 +79,7 @@ function () {
 <body>
 <div id="container">
 
-    <div id="templatemo_middle_wrapper">
-	    <div id="templatemo_middle">
-            <div id="piecemaker">
-              <p>&nbsp;</p>
-                <uc3:header ID="header1" runat="server" />
-            </div>
-	    </div>
-        <!--<div style="height:300px;" align=center>
-        <img id="test" width=1 height=1/>
-        </div>-->
-    </div> <!-- END of slider -->
+    <uc3:header ID="header1" runat="server" />
 
     <uc1:columnLeft ID="columnLeft" runat="server" />
     <uc2:columnRight ID="columnRight" runat="server" />
